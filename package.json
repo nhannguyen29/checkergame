@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node --presets react,es2015 src/server.js"
+    "start": "babel-node --presets react,es2015 src/server.js",
+    "build": "NODE_ENV=\"production\" node_modules/.bin/webpack -p"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "babel-loader": "^7.1.1",
-    "webpack": "^3.3.0"
+    "webpack": "^3.3.0",
+    "webpack-bundle-analyzer": "^2.8.3"
   }
 }

@@ -5,10 +5,10 @@ const app = new Express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(Express.static(path.join(__dirname, 'static')));
+app.use(Express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.send('Hello world');
+    res.render('index');
 });
 
 const port = process.env.PORT || 3000;
