@@ -49,10 +49,12 @@ var userNames = (function() {
 }());
 
 // export function for listening to the socket
-module.exports = function(socket) {
-   var name = userNames.getGuestName();
+const socketResolve = function(socket) {
+    console.log("a user has connected");
+   //var name = userNames.getGuestName();
 
    // send the new user their name and a list of users
+   /*
    socket.emit('init', {
       name: name,
       users: userNames.get()
@@ -97,4 +99,7 @@ module.exports = function(socket) {
       });
       userNames.free(name);
    });
+   */
 };
+
+export default socketResolve;

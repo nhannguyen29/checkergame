@@ -3,7 +3,6 @@ const path = require('path');
 
 const BUILD_DIR = path.resolve(__dirname, 'src/public/js');
 const APP_DIR = path.resolve(__dirname, 'src/');
-const SOCKETIO = path.resolve(__dirname, 'node_modules/socket.io');
 
 const config = {
    entry: APP_DIR + '/app.jsx',
@@ -15,7 +14,6 @@ const config = {
       loaders: [{
          test: /\.jsx?/,
          include: APP_DIR,
-         SOCKETIO
          exclude: /(node_modules|bower_components)/,
          loader: 'babel-loader',
          query: {
