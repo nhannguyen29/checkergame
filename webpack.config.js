@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const BUILD_DIR = path.resolve(__dirname, 'src/public/js');
-const APP_DIR = path.resolve(__dirname, 'src/');
+const APP_DIR = path.resolve(__dirname, 'src');
 
 const config = {
    entry: APP_DIR + '/app.jsx',
