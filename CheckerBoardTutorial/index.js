@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Board from './Board.jsx';
-import { observe } from './Game.jsx';
+import {observe} from './Game.jsx';
 
 const rootEl = document.getElementById('app');
 
-observe(knightPosition =>
-  ReactDOM.render(
-    <Board knightPosition={knightPosition} />,
-    rootEl
-  )
+observe(topLeftPiecePos =>
+    ReactDOM.render(
+        <Board topLeftPiecePos={topLeftPiecePos}/>,
+        rootEl
+    )
 );
