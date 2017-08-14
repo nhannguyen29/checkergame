@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Square from './Square.jsx';
-import {canMoveKnight, moveKnight} from './Game.jsx';
+import {canMovePiece, assignMovedPos, isKingPos} from './Validation.jsx';
 import {ItemTypes} from './ItemTypes.jsx';
 import {DropTarget} from 'react-dnd';
 
 const squareTarget = {
     canDrop(props) {
-        return canMoveKnight(props.x, props.y);
+        return canMovePiece(props.x, props.y, props.isPlayer1, props.isKing);
     },
 
     drop(props) {
-        moveKnight(props.x, props.y);
+        isKingPos(props.x, props.y, props.isPlayer1);
+        assignMovedPos(props.x, props.y);
     }
 };
 
@@ -23,7 +24,7 @@ function collect(connect, monitor) {
     };
 }
 
-class BoardSquare extends Component {
+class SquareContainer extends Component {
     renderOverlay(color) {
         return (
             <div style={{
@@ -40,7 +41,7 @@ class BoardSquare extends Component {
     }
 
     render() {
-        const {x, y, connectDropTarget, isOver, canDrop} = this.props;
+        const {x, y, isPlayer1, isKing, connectDropTarget, isOver, canDrop} = this.props;
         const black = (x + y) % 2 === 1;
 
         return connectDropTarget(
@@ -53,18 +54,20 @@ class BoardSquare extends Component {
                     {this.props.children}
                 </Square>
                 {isOver && !canDrop && this.renderOverlay('#F44336')}
-                {!isOver && canDrop && this.renderOverlay('#9CCC65')}
-                {isOver && canDrop && this.renderOverlay('#64DD17')}
+                {!isOver && canDrop && this.renderOverlay('#AED581')}
+                {isOver && canDrop && this.renderOverlay('#4edd18')}
             </div>
         );
     }
 }
 
-BoardSquare.propTypes = {
+SquareContainer.propTypes = {
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired,
+    isPlayer1: PropTypes.bool.isRequired,
+    isKing: PropTypes.bool.isRequired,
     isOver: PropTypes.bool.isRequired,
-    canDrop: PropTypes.bool.isRequired
+    canDrop: PropTypes.bool
 };
 
-export default DropTarget(ItemTypes.KNIGHT, squareTarget, collect)(BoardSquare);
+export default DropTarget(ItemTypes.PIECE, squareTarget, collect)(SquareContainer);

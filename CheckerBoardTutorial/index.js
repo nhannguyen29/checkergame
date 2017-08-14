@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Board from './Board.jsx';
-import {observe} from './Game.jsx';
+import CheckerBoard from './CheckerBoard.jsx';
+import {observe} from './Validation.jsx';
 
 const rootEl = document.getElementById('app');
 
-observe(topLeftPiecePos =>
+observe((selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, isKing) =>
     ReactDOM.render(
-        <Board topLeftPiecePos={topLeftPiecePos}/>,
+        <CheckerBoard selectedPos={selectedPos} player1PiecesPos={player1PiecesPos} player2PiecesPos={player2PiecesPos} isPlayer1={isPlayer1} isKing={isKing}/>,
         rootEl
     )
 );
