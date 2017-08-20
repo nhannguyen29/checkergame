@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --exec babel-node --presets react,es2015 src/server.js",
-    "build": "NODE_ENV=\"production\" node_modules/.bin/webpack -p"
+    "build": "node_modules/.bin/webpack -w"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,14 @@
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "react": "^15.6.1",
+    "react-dnd": "^2.4.0",
+    "react-dnd-html5-backend": "^2.4.1",
     "react-dom": "^15.6.1",
-    "socket.io": "^2.0.3"
+    "react-router": "^3.0.5",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.71.4",
+    "socket.io": "^2.0.3",
+    "webpack": "^3.5.5"
   },
   "devDependencies": {
     "babel-loader": "^7.1.1",
