@@ -2,7 +2,7 @@ body {
     background-color: #f7f7f7;
 }
 
-body > div, body > div > div, body > div > div > div.login-page {
+body > div, body > div > div, body > div > div > div.appContainer {
     height: 100%;
 }
 
@@ -14,3 +14,7 @@ body > div, body > div > div, body > div > div > div.login-page {
     font-size: 3em !important;
 }
 
+.logList {
+    text-align: left;
+    height: 32em;
+}
