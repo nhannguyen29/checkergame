@@ -11,7 +11,7 @@ const squareTarget = {
     },
 
     drop(props) {
-        isKingPos(props.x, props.y, props.isPlayer1);
+        // isKingPos(props.x, props.y, props.isPlayer1);
         assignMovedPos(props.x, props.y);
     }
 };
@@ -41,7 +41,7 @@ class SquareContainer extends Component {
     }
 
     render() {
-        const {x, y, isPlayer1, isKing, connectDropTarget, isOver, canDrop} = this.props;
+        const {x, y, connectDropTarget, isOver, canDrop} = this.props;
         const black = (x + y) % 2 === 1;
 
         return connectDropTarget(
@@ -65,7 +65,9 @@ SquareContainer.propTypes = {
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired,
     isPlayer1: PropTypes.bool.isRequired,
-    isKing: PropTypes.bool.isRequired,
+    // isKing: PropTypes.bool.isRequired,
+    // player1PiecesPos: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number.isRequired).isRequired).isRequired,
+    // player2PiecesPos: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number.isRequired).isRequired).isRequired,
     isOver: PropTypes.bool.isRequired,
     canDrop: PropTypes.bool
 };
