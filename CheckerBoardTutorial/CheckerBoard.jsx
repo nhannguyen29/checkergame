@@ -18,12 +18,7 @@ class CheckerBoard extends Component {
                 width: '12.5%',
                 height: '12.5%'
             }}>
-                <SquareContainer x={x} y={y}
-                                 isPlayer1={this.props.isPlayer1}
-                    // isKing={this.props.isKing}
-                    // player1PiecesPos={this.props.player1PiecesPos}
-                    // player2PiecesPos={this.props.player2PiecesPos}>
-                >
+                <SquareContainer x={x} y={y}>
                     {this.renderPiece(x, y)}
                 </SquareContainer>
             </div>
@@ -32,34 +27,29 @@ class CheckerBoard extends Component {
 
     renderPiece(x, y) {
         var piece = [x, y];
-        var pieces = [];
 
-        try {
-            pieces = this.props.player1PiecesPos;
-            var i = pieces.findIndex(function (n) {
-                return piece.every(function (p, q) {
-                    return p === n[q]
-                });
+        // RENDER Player 1 Piece
+        var i = this.props.player1PiecesPos.findIndex(function (n) {
+            return piece.every(function (p, q) {
+                return p === n[q]
             });
+        });
 
-            if (i != -1) {
-                return <Piece isPlayer1={true} pos={[x, y]}/>;
-            }
-        } catch (err) {
+        if (i != -1) {
+            // console.log("INDEX: ", i);
+            return <Piece isPlayer1={true} pos={[x, y]} isKing={this.props.player1KingPos[i]}/>;
         }
 
-        try {
-            pieces = this.props.player2PiecesPos;
-            var i = pieces.findIndex(function (n) {
-                return piece.every(function (p, q) {
-                    return p === n[q]
-                });
+        // RENDER Player 2 Piece
+        i = this.props.player2PiecesPos.findIndex(function (n) {
+            return piece.every(function (p, q) {
+                return p === n[q]
             });
+        });
 
-            if (i != -1) {
-                return <Piece isPlayer1={false} pos={[x, y]}/>;
-            }
-        } catch (err) {
+        if (i != -1) {
+            // console.log("INDEX: ", i);
+            return <Piece isPlayer1={false} pos={[x, y]} isKing={this.props.player2KingPos[i]}/>;
         }
     }
 
@@ -86,9 +76,10 @@ class CheckerBoard extends Component {
 CheckerBoard.propTypes = {
     selectedPos: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
     isPlayer1: PropTypes.bool.isRequired,
-    isKing: PropTypes.bool.isRequired,
     player1PiecesPos: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number.isRequired).isRequired).isRequired,
-    player2PiecesPos: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number.isRequired).isRequired).isRequired
+    player2PiecesPos: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number.isRequired).isRequired).isRequired,
+    player1KingPos: PropTypes.arrayOf(PropTypes.bool.isRequired).isRequired,
+    player2KingPos: PropTypes.arrayOf(PropTypes.bool.isRequired).isRequired
 };
 
 export default DragDropContext(HTML5Backend)(CheckerBoard);

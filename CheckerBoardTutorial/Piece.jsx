@@ -2,15 +2,11 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {ItemTypes} from './ItemTypes.jsx';
 import {DragSource} from 'react-dnd';
-import {selectPos, isKingPos} from './Validation.jsx';
-
-const isKing = false;
+import {selectPos} from './Validation.jsx';
 
 const pieceSource = {
     beginDrag(props) {
-        // console.log("POS:", props.pos);
-        selectPos(props.pos, props.isPlayer1);
-        isKingPos(props.x, props.y, props.isPlayer1);
+        selectPos(props.pos, props.isPlayer1, props.isKing);
 
         return {};
     }
@@ -116,7 +112,7 @@ class Piece extends Component {
 Piece.propTypes = {
     isPlayer1: PropTypes.bool.isRequired,
     pos: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
-    // isKing: PropTypes.bool.isRequired,
+    isKing: PropTypes.bool.isRequired,
     connectDragSource: PropTypes.func.isRequired,
     isDragging: PropTypes.bool.isRequired
 };
