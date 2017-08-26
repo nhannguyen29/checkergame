@@ -10,9 +10,6 @@ class CheckerBoard extends Component {
         const x = i % 8;
         const y = Math.floor(i / 8);
 
-        // console.log("X: ", x);
-        // console.log("Y: ", y);
-
         return (
             <div key={i} style={{
                 width: '12.5%',
@@ -35,8 +32,7 @@ class CheckerBoard extends Component {
             });
         });
 
-        if (i != -1) {
-            // console.log("INDEX: ", i);
+        if (i !== -1) {
             return <Piece isPlayer1={true} pos={[x, y]} isKing={this.props.player1KingPos[i]}/>;
         }
 
@@ -47,8 +43,7 @@ class CheckerBoard extends Component {
             });
         });
 
-        if (i != -1) {
-            // console.log("INDEX: ", i);
+        if (i !== -1) {
             return <Piece isPlayer1={false} pos={[x, y]} isKing={this.props.player2KingPos[i]}/>;
         }
     }

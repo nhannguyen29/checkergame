@@ -20,9 +20,22 @@
       <file leaf-file-name="Validation.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Validation.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="435">
+              <caret line="157" column="47" lean-forward="false" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
+              <folding>
+                <element signature="n#!!block;n#emitChange#0" expanded="false" />
+                <element signature="n#!!block;n#observe#0" expanded="false" />
+                <element signature="n#!!block;n#selectPos#0" expanded="false" />
+                <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+                <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+                <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+                <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+                <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+                <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+                <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
+                <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
+                <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -30,8 +43,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -42,8 +55,8 @@
       <file leaf-file-name="CheckerBoard.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CheckerBoard.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="617">
+              <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -54,8 +67,8 @@
       <file leaf-file-name="SquareContainer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SquareContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            <state relative-caret-position="208">
+              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -66,8 +79,8 @@
       <file leaf-file-name="Square.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Square.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="255">
+              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -78,9 +91,11 @@
       <file leaf-file-name="Piece.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Piece.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="60">
+              <caret line="4" column="43" lean-forward="true" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,9 +113,22 @@
       <find>squareTar</find>
       <find>selectedPos</find>
       <find>==</find>
+      <find>let</find>
+      <find>!=</find>
+      <find>_jump</find>
+      <find>posX - 1</find>
+      <find>posY + 1</find>
+      <find>posY - 1</find>
     </findStrings>
     <replaceStrings>
       <replace>===</replace>
+      <replace>var</replace>
+      <replace>!==</replace>
+      <replace>leftX</replace>
+      <replace>rightX</replace>
+      <replace>bottomY</replace>
+      <replace>above Y</replace>
+      <replace>aboveY</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -113,9 +141,9 @@
         <option value="$PROJECT_DIR$/Board.jsx" />
         <option value="$PROJECT_DIR$/ItemTypes.jsx" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/Piece.jsx" />
         <option value="$PROJECT_DIR$/CheckerBoard.jsx" />
         <option value="$PROJECT_DIR$/SquareContainer.jsx" />
-        <option value="$PROJECT_DIR$/Piece.jsx" />
         <option value="$PROJECT_DIR$/Validation.jsx" />
       </list>
     </option>
@@ -139,10 +167,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1777" />
+    <option name="x" value="1917" />
     <option name="y" value="23" />
-    <option name="width" value="1423" />
-    <option name="height" value="1052" />
+    <option name="width" value="1283" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -235,12 +263,15 @@
       <workItem from="1503186088567" duration="9678000" />
       <workItem from="1503207657905" duration="605000" />
       <workItem from="1503263975094" duration="585000" />
-      <workItem from="1503288564720" duration="3171000" />
+      <workItem from="1503288564720" duration="3370000" />
+      <workItem from="1503292943020" duration="35000" />
+      <workItem from="1503439853749" duration="14557000" />
+      <workItem from="1503548528190" duration="31358000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48455000" />
+    <option name="totallyTimeSpent" value="94604000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -252,18 +283,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1777" y="23" width="1423" height="1052" extended-state="0" />
-    <editor active="true" />
+    <frame x="1917" y="23" width="1283" height="1057" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15049928" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16719493" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3011696" sideWeight="0.51005024" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3011696" sideWeight="0.51005024" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21107627" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25467774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3988183" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -271,6 +300,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -282,7 +312,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -301,7 +331,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-          <folding />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -309,7 +341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -327,7 +358,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#emitChange#0" expanded="false" />
+            <element signature="n#!!block;n#observe#0" expanded="false" />
+            <element signature="n#!!block;n#selectPos#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+            <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -365,7 +409,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -373,7 +419,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#emitChange#0" expanded="false" />
+            <element signature="n#!!block;n#observe#0" expanded="false" />
+            <element signature="n#!!block;n#selectPos#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+            <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -411,7 +470,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -429,7 +490,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#emitChange#0" expanded="false" />
+            <element signature="n#!!block;n#observe#0" expanded="false" />
+            <element signature="n#!!block;n#selectPos#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+            <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -467,7 +541,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -485,7 +561,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#emitChange#0" expanded="false" />
+            <element signature="n#!!block;n#observe#0" expanded="false" />
+            <element signature="n#!!block;n#selectPos#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+            <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -523,7 +612,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -531,7 +622,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#emitChange#0" expanded="false" />
+            <element signature="n#!!block;n#observe#0" expanded="false" />
+            <element signature="n#!!block;n#selectPos#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+            <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -569,7 +673,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,36 +749,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../checkergame/CheckerBoardTutorial/BoardSquare.jsx" />
     <entry file="file://$PROJECT_DIR$/../checkergame/CheckerBoardTutorial/Game.jsx" />
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Square.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SquareContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        <state relative-caret-position="255">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -681,16 +766,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Piece.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="60">
+          <caret line="4" column="43" lean-forward="true" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CheckerBoard.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        <state relative-caret-position="617">
+          <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SquareContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -699,9 +806,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Validation.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="435">
+          <caret line="157" column="47" lean-forward="false" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!block;n#emitChange#0" expanded="false" />
+            <element signature="n#!!block;n#observe#0" expanded="false" />
+            <element signature="n#!!block;n#selectPos#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+            <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
+            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
