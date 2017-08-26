@@ -7,6 +7,7 @@ var observer = null;
 
 var selectedPos = [0, 0];
 var isKing = false;
+var turnedKing = false;
 var pieceBelongsToPlayer = 0;
 var capturedPiece = [];
 var jumpPos = [];
@@ -255,7 +256,6 @@ export function assignMovedPos(posX, posY) {
     var pos = [posX, posY];
 
     // check whether capture move is made
-    console.log("piece ", pieceBelongsToPlayer);
     if (compareArrays(jumpPos, pos) && capturedPiece.length !== 0) { // if jump move is made and capture piece is targeted
         captureFlag = true;
     }
@@ -263,13 +263,43 @@ export function assignMovedPos(posX, posY) {
     capturePiece();
     emitChange();
 
-    // if capture move is still legal, keep the same player turn. else switch turn to the other player
-    selectedPos = [posX, posY];
+    if (!turnedKing) {
+        // if capture move is still legal, keep the same player turn. else switch turn to the other player
+        selectedPos = [posX, posY];
 
-    if (!isKing) {
-        if (isPlayer1) {
-            if ((isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
-                || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
+        if (!isKing) {
+            if (isPlayer1) {
+                if ((isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
+                        || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
+                    && captureCount > 0) { // enable double, triple, quad jumps
+                    continueCapture = true;
+                    playerTurn = 1; // can still make another capture move
+                }
+                else {
+                    continueCapture = false;
+                    captureCount = 0;
+                    playerTurn = 2;
+                }
+            }
+            else {
+                if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
+                        || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2))
+                    && captureCount > 0) { // enable double, triple, quad jumps
+                    continueCapture = true;
+                    playerTurn = 2; // can still make another capture move
+                }
+                else {
+                    continueCapture = false;
+                    captureCount = 0;
+                    playerTurn = 1;
+                }
+            }
+        }
+        else if (isKing && isPlayer1) {
+            if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
+                    || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2)
+                    || isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
+                    || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
                 && captureCount > 0) { // enable double, triple, quad jumps
                 continueCapture = true;
                 playerTurn = 1; // can still make another capture move
@@ -280,9 +310,11 @@ export function assignMovedPos(posX, posY) {
                 playerTurn = 2;
             }
         }
-        else {
+        else if (isKing && !isPlayer1) {
             if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
-                || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2))
+                    || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2)
+                    || isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
+                    || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
                 && captureCount > 0) { // enable double, triple, quad jumps
                 continueCapture = true;
                 playerTurn = 2; // can still make another capture move
@@ -294,35 +326,17 @@ export function assignMovedPos(posX, posY) {
             }
         }
     }
-    else if (isKing && isPlayer1) {
-        if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
-            || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2)
-            || isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
-            || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
-            && captureCount > 0) { // enable double, triple, quad jumps
-            continueCapture = true;
-            playerTurn = 1; // can still make another capture move
-        }
-        else {
-            continueCapture = false;
-            captureCount = 0;
+    else {
+        if (isPlayer1) {
             playerTurn = 2;
         }
-    }
-    else if (isKing && !isPlayer1) {
-        if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
-            || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2)
-            || isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
-            || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
-            && captureCount > 0) { // enable double, triple, quad jumps
-            continueCapture = true;
-            playerTurn = 2; // can still make another capture move
-        }
         else {
-            continueCapture = false;
-            captureCount = 0;
             playerTurn = 1;
         }
+
+        continueCapture = false;
+        captureCount = 0;
+        turnedKing = false;
     }
 }
 
@@ -332,6 +346,8 @@ function isKingPos(posY, i) {
             isKing = true;
 
             player1KingPos[i] = true;
+
+            turnedKing = true;
         }
     }
     else {
@@ -339,13 +355,13 @@ function isKingPos(posY, i) {
             isKing = true;
 
             player2KingPos[i] = true;
+
+            turnedKing = true;
         }
     }
 }
 
 function capturePiece() {
-    console.log("Cap: ", capturedPiece);
-
     if (captureFlag
         && ((isPlayer1 && !jumpOverPlayer1) || (!isPlayer1 && jumpOverPlayer1))) {
         var i = inspectPos(capturedPiece);
