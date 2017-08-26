@@ -10,7 +10,10 @@ var isKing = false;
 var pieceBelongsToPlayer = 0;
 var capturedPiece = [];
 var jumpPos = [];
+var jumpOverPlayer1 = false;
 var captureFlag = false;
+var captureCount = 0;
+var continueCapture = false;
 var playerTurn = 2;
 
 function emitChange() {
@@ -53,48 +56,12 @@ export function canMovePiece(posX, posY) {
     if (isJumpSquareEmpty(posX, posY, dx, dy)) { // if the square can be legally jumped to for capturing
         return true;
     }
-    else if (isSquareEmpty(posX, posY)) { // if square has a piece on it
+    else if (isSquareEmpty(posX, posY) && !continueCapture) { // if square has a piece on it
         return canMoveToRange(dx, dy, 1);
     }
     else { // square does not have a piece, move normally
         return false;
     }
-}
-
-export function assignMovedPos(posX, posY) {
-    var i = inspectPos(selectedPos); // find array index of the selected position
-
-    if (isPlayer1) {
-        player1PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
-
-        isKingPos(posY, i); // check if the new position can be king casted
-    }
-    else {
-        player2PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
-
-        isKingPos(posY, i); // check if the new position can be king casted
-    }
-
-    var pos = [posX, posY];
-
-    if (compareArrays(jumpPos, pos) && capturedPiece.length !== 0) { // if jump move is made and capture piece is targeted
-        captureFlag = true;
-    }
-
-    if (isPlayer1) {
-        playerTurn = 2;
-    }
-    else {
-        playerTurn = 1;
-    }
-
-    emitChange();
-}
-
-function compareArrays(a1, a2) {
-    return (a1.length == a2.length) && a1.every(function(element, index) {
-        return element === a2[index];
-    });
 }
 
 function inspectPos(pos) {
@@ -125,23 +92,6 @@ function inspectPos(pos) {
     return -1; // nothing is found meaning the position is of an empty square
 }
 
-function isKingPos(posY, i) {
-    if (isPlayer1) {
-        if (posY === 0) { // piece position is at top row
-            isKing = true;
-
-            player1KingPos[i] = true;
-        }
-    }
-    else {
-        if (posY === 7) { // piece position is at bottom row
-            isKing = true;
-
-            player2KingPos[i] = true;
-        }
-    }
-}
-
 function canMoveToRange(dx, dy, range) {
     if (isKing) {
         return (Math.abs(dx) === range && Math.abs(dy) === range); // king can move 1 square diagonally upward and downward
@@ -157,6 +107,10 @@ function canMoveToRange(dx, dy, range) {
 
 function isJumpSquareEmpty(posX, posY, dx, dy) {
     // starting at the square that is supposed to be jump-able
+    if (posX < 0 || posX > 7 || posY < 0 || posY > 7) {
+        return false;
+    }
+
     if (isSquareEmpty(posX, posY) && Math.abs(dx) === 2 && Math.abs(dy) === 2) {
         var [x, y] = selectedPos;
         var leftX = posX - 1;
@@ -166,97 +120,89 @@ function isJumpSquareEmpty(posX, posY, dx, dy) {
 
         if (!isKing) {
             if (isPlayer1) {
-                // leftX = posX - 1;
-                // rightX = posX + 1;
-
                 if (!isSquareEmpty(leftX, bottomY) && (leftX - 1 === x) && (bottomY + 1 === y) && canCapture()) { // red piece is to the left below black piece
-                    console.log("pos red piece is to the left below black piece: ", posX, posY);
+                    console.log("red piece is to the left below black piece: ", posX, posY);
                     jumpPos = [posX, posY];
+                    jumpOverPlayer1 = false;
                     capturedPiece = [leftX, bottomY];
                     return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
                 }
 
                 if (!isSquareEmpty(rightX, bottomY) && (rightX + 1 === x) && (bottomY + 1 === y) && canCapture()) { // red piece is to the right below black piece
-                    console.log("pos red piece is to the right below black piece: ", posX, posY);
+                    console.log("red piece is to the right below black piece: ", posX, posY);
                     jumpPos = [posX, posY];
+                    jumpOverPlayer1 = false;
                     capturedPiece = [rightX, bottomY];
                     return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
                 }
             } else {
-                // leftX = posX + 1;
-                // rightX = posX - 1;
-
                 if (!isSquareEmpty(leftX, aboveY) && (leftX - 1 === x) && (aboveY - 1 === y) && canCapture()) { // black piece is to the right above red piece
-                    console.log("pos black piece is to the left above red piece: ", posX, posY);
+                    console.log("black piece is to the left above red piece: ", posX, posY);
                     jumpPos = [posX, posY];
+                    jumpOverPlayer1 = true;
                     capturedPiece = [leftX, aboveY];
                     return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
                 }
 
                 if (!isSquareEmpty(rightX, aboveY) && (rightX + 1 === x) && (aboveY - 1 === y) && canCapture()) { // black piece is to the right above red piece
-                    console.log("pos black piece is to the right above red piece: ", posX, posY);
+                    console.log("black piece is to the right above red piece: ", posX, posY);
                     jumpPos = [posX, posY];
+                    jumpOverPlayer1 = true;
                     capturedPiece = [rightX, aboveY];
                     return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
                 }
             }
         } else {
-            if (isPlayer1) {
-                if (!isSquareEmpty(leftX, bottomY) && (leftX - 1 === x) && (bottomY + 1 === y) && canCapture()) { // red piece is to the left below black piece
-                    console.log("pos K red piece is to the left below black: ", posX, posY);
-                    jumpPos = [posX, posY];
-                    capturedPiece = [leftX, bottomY];
-                    return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
+            if (!isSquareEmpty(leftX, bottomY) && (leftX - 1 === x) && (bottomY + 1 === y) && canCapture()) { // red piece is to the left below black piece
+                console.log("K piece is to the left below: ", posX, posY);
+                jumpPos = [posX, posY];
+                if (isPlayer1) {
+                    jumpOverPlayer1 = false;
                 }
+                else {
+                    jumpOverPlayer1 = true;
+                }
+                capturedPiece = [leftX, bottomY];
+                return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
+            }
 
-                if (!isSquareEmpty(leftX, aboveY) && (leftX - 1 === x) && (aboveY - 1 === y) && canCapture()) { // red piece is to the left above black piece
-                    console.log("pos K red piece is to the left above black: ", posX, posY);
-                    jumpPos = [posX, posY];
-                    capturedPiece = [leftX, aboveY];
-                    return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
+            if (!isSquareEmpty(leftX, aboveY) && (leftX - 1 === x) && (aboveY - 1 === y) && canCapture()) { // red piece is to the left above black piece
+                console.log("K piece is to the left above: ", posX, posY);
+                jumpPos = [posX, posY];
+                if (isPlayer1) {
+                    jumpOverPlayer1 = false;
                 }
+                else {
+                    jumpOverPlayer1 = true;
+                }
+                capturedPiece = [leftX, aboveY];
+                return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
+            }
 
-                if (!isSquareEmpty(rightX, bottomY) && (rightX + 1 === x) && (bottomY + 1 === y) && canCapture()) { // red piece is to the right below black piece
-                    console.log("pos K red piece is to the right below black: ", posX, posY);
-                    jumpPos = [posX, posY];
-                    capturedPiece = [rightX, bottomY];
-                    return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
+            if (!isSquareEmpty(rightX, bottomY) && (rightX + 1 === x) && (bottomY + 1 === y) && canCapture()) { // red piece is to the right below black piece
+                console.log("K piece is to the right below: ", posX, posY);
+                jumpPos = [posX, posY];
+                if (isPlayer1) {
+                    jumpOverPlayer1 = false;
                 }
+                else {
+                    jumpOverPlayer1 = true;
+                }
+                capturedPiece = [rightX, bottomY];
+                return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
+            }
 
-                if (!isSquareEmpty(rightX, aboveY) && (rightX + 1 === x) && (aboveY - 1 === y) && canCapture()) { // red piece is to the right above black piece
-                    console.log("pos K red piece is to the right above black: ", posX, posY);
-                    jumpPos = [posX, posY];
-                    capturedPiece = [rightX, aboveY];
-                    return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
+            if (!isSquareEmpty(rightX, aboveY) && (rightX + 1 === x) && (aboveY - 1 === y) && canCapture()) { // red piece is to the right above black piece
+                console.log("K piece is to the right above: ", posX, posY);
+                jumpPos = [posX, posY];
+                if (isPlayer1) {
+                    jumpOverPlayer1 = false;
                 }
-            } else {
-                if (!isSquareEmpty(rightX, aboveY) && (rightX + 1 === x) && (aboveY - 1 === y) && canCapture()) { // black piece is to the right above red piece
-                    console.log("pos K black piece is to the right above red: ", posX, posY);
-                    jumpPos = [posX, posY];
-                    capturedPiece = [rightX, aboveY];
-                    return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
+                else {
+                    jumpOverPlayer1 = true;
                 }
-
-                if (!isSquareEmpty(rightX, bottomY) && (rightX + 1 === x) && (bottomY + 1 === y) && canCapture()) { // black piece is to the right below red piece
-                    console.log("pos K black piece is to the right below red: ", posX, posY);
-                    jumpPos = [posX, posY];
-                    capturedPiece = [rightX, bottomY];
-                    return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
-                }
-
-                if (!isSquareEmpty(leftX, aboveY) && (leftX - 1 === x) && (aboveY - 1 === y) && canCapture()) { // black piece is to the left above red piece
-                    console.log("pos K black piece is to the left above red: ", posX, posY);
-                    jumpPos = [posX, posY];
-                    capturedPiece = [leftX, aboveY];
-                    return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
-                }
-
-                if (!isSquareEmpty(leftX, bottomY) && (leftX - 1 === x) && (bottomY + 1 === y) && canCapture()) { // black piece is to the left below red piece
-                    console.log("pos K black piece is to the left below red: ", posX, posY);
-                    jumpPos = [posX, posY];
-                    capturedPiece = [leftX, bottomY];
-                    return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
-                }
+                capturedPiece = [rightX, aboveY];
+                return canMoveToRange(dx, dy, 2) // the selected piece is at the correct range
             }
         }
     }
@@ -291,8 +237,117 @@ function canCapture() {
     }
 }
 
-export function capturePiece() {
-    if (captureFlag) {
+export function assignMovedPos(posX, posY) {
+    var i = inspectPos(selectedPos); // find array index of the selected position
+
+    // assign new position in position arrays
+    if (isPlayer1) {
+        player1PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
+
+        isKingPos(posY, i); // check if the new position can be king casted
+    }
+    else {
+        player2PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
+
+        isKingPos(posY, i); // check if the new position can be king casted
+    }
+
+    var pos = [posX, posY];
+
+    // check whether capture move is made
+    console.log("piece ", pieceBelongsToPlayer);
+    if (compareArrays(jumpPos, pos) && capturedPiece.length !== 0) { // if jump move is made and capture piece is targeted
+        captureFlag = true;
+    }
+
+    capturePiece();
+    emitChange();
+
+    // if capture move is still legal, keep the same player turn. else switch turn to the other player
+    selectedPos = [posX, posY];
+
+    if (!isKing) {
+        if (isPlayer1) {
+            if ((isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
+                || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
+                && captureCount > 0) { // enable double, triple, quad jumps
+                continueCapture = true;
+                playerTurn = 1; // can still make another capture move
+            }
+            else {
+                continueCapture = false;
+                captureCount = 0;
+                playerTurn = 2;
+            }
+        }
+        else {
+            if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
+                || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2))
+                && captureCount > 0) { // enable double, triple, quad jumps
+                continueCapture = true;
+                playerTurn = 2; // can still make another capture move
+            }
+            else {
+                continueCapture = false;
+                captureCount = 0;
+                playerTurn = 1;
+            }
+        }
+    }
+    else if (isKing && isPlayer1) {
+        if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
+            || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2)
+            || isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
+            || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
+            && captureCount > 0) { // enable double, triple, quad jumps
+            continueCapture = true;
+            playerTurn = 1; // can still make another capture move
+        }
+        else {
+            continueCapture = false;
+            captureCount = 0;
+            playerTurn = 2;
+        }
+    }
+    else if (isKing && !isPlayer1) {
+        if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
+            || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2)
+            || isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
+            || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
+            && captureCount > 0) { // enable double, triple, quad jumps
+            continueCapture = true;
+            playerTurn = 2; // can still make another capture move
+        }
+        else {
+            continueCapture = false;
+            captureCount = 0;
+            playerTurn = 1;
+        }
+    }
+}
+
+function isKingPos(posY, i) {
+    if (isPlayer1) {
+        if (posY === 0) { // piece position is at top row
+            isKing = true;
+
+            player1KingPos[i] = true;
+        }
+    }
+    else {
+        if (posY === 7) { // piece position is at bottom row
+            isKing = true;
+
+            player2KingPos[i] = true;
+        }
+    }
+}
+
+function capturePiece() {
+    console.log("Cap: ", capturedPiece);
+
+    if (captureFlag
+        && ((isPlayer1 && !jumpOverPlayer1) || (!isPlayer1 && jumpOverPlayer1))) {
         var i = inspectPos(capturedPiece);
 
         if (isPlayer1) {
@@ -305,11 +360,19 @@ export function capturePiece() {
         capturedPiece = [];
         jumpPos = [];
         captureFlag = false;
-
-        emitChange();
+        captureCount = captureCount + 1;
+    } else {
+        capturedPiece = [];
+        jumpPos = [];
+        captureFlag = false;
+        captureCount = 0;
     }
-
-    capturedPiece = [];
-    jumpPos = [];
-    captureFlag = false;
 }
+
+function compareArrays(a1, a2) {
+    return (a1.length == a2.length) && a1.every(function (element, index) {
+        return element === a2[index];
+    });
+}
+
+

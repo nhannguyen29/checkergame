@@ -20,21 +20,22 @@
       <file leaf-file-name="Validation.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Validation.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="157" column="47" lean-forward="false" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
+            <state relative-caret-position="87">
+              <caret line="211" column="0" lean-forward="true" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
               <folding>
                 <element signature="n#!!block;n#emitChange#0" expanded="false" />
                 <element signature="n#!!block;n#observe#0" expanded="false" />
                 <element signature="n#!!block;n#selectPos#0" expanded="false" />
-                <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
-                <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+                <element signature="n#!!block;n#canMovePiece#0" expanded="false" />
                 <element signature="n#!!block;n#inspectPos#0" expanded="false" />
-                <element signature="n#!!block;n#isKingPos#0" expanded="false" />
                 <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
                 <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
-                <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
-                <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
-                <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+                <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+                <element signature="n#!!block;n#canCapture#0" expanded="false" />
+                <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+                <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+                <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+                <element signature="n#!!block;n#compareArrays#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -43,7 +44,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="105">
               <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -67,8 +68,8 @@
       <file leaf-file-name="SquareContainer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SquareContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -119,6 +120,7 @@
       <find>posX - 1</find>
       <find>posY + 1</find>
       <find>posY - 1</find>
+      <find>pos</find>
     </findStrings>
     <replaceStrings>
       <replace>===</replace>
@@ -166,11 +168,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1917" />
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1283" />
-    <option name="height" value="1057" />
+    <option name="width" value="1280" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -267,11 +268,12 @@
       <workItem from="1503292943020" duration="35000" />
       <workItem from="1503439853749" duration="14557000" />
       <workItem from="1503548528190" duration="31358000" />
+      <workItem from="1503773490158" duration="8472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94604000" />
+    <option name="totallyTimeSpent" value="103076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -283,16 +285,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1917" y="23" width="1283" height="1057" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16719493" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16759333" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3011696" sideWeight="0.51005024" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25467774" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.359882" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3988183" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -312,7 +315,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -362,15 +365,16 @@
             <element signature="n#!!block;n#emitChange#0" expanded="false" />
             <element signature="n#!!block;n#observe#0" expanded="false" />
             <element signature="n#!!block;n#selectPos#0" expanded="false" />
-            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
-            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#canMovePiece#0" expanded="false" />
             <element signature="n#!!block;n#inspectPos#0" expanded="false" />
-            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
             <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
             <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
-            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+            <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+            <element signature="n#!!block;n#canCapture#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -423,15 +427,16 @@
             <element signature="n#!!block;n#emitChange#0" expanded="false" />
             <element signature="n#!!block;n#observe#0" expanded="false" />
             <element signature="n#!!block;n#selectPos#0" expanded="false" />
-            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
-            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#canMovePiece#0" expanded="false" />
             <element signature="n#!!block;n#inspectPos#0" expanded="false" />
-            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
             <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
             <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
-            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+            <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+            <element signature="n#!!block;n#canCapture#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -494,15 +499,16 @@
             <element signature="n#!!block;n#emitChange#0" expanded="false" />
             <element signature="n#!!block;n#observe#0" expanded="false" />
             <element signature="n#!!block;n#selectPos#0" expanded="false" />
-            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
-            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#canMovePiece#0" expanded="false" />
             <element signature="n#!!block;n#inspectPos#0" expanded="false" />
-            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
             <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
             <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
-            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+            <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+            <element signature="n#!!block;n#canCapture#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,15 +571,16 @@
             <element signature="n#!!block;n#emitChange#0" expanded="false" />
             <element signature="n#!!block;n#observe#0" expanded="false" />
             <element signature="n#!!block;n#selectPos#0" expanded="false" />
-            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
-            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#canMovePiece#0" expanded="false" />
             <element signature="n#!!block;n#inspectPos#0" expanded="false" />
-            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
             <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
             <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
-            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+            <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+            <element signature="n#!!block;n#canCapture#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -626,15 +633,16 @@
             <element signature="n#!!block;n#emitChange#0" expanded="false" />
             <element signature="n#!!block;n#observe#0" expanded="false" />
             <element signature="n#!!block;n#selectPos#0" expanded="false" />
-            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
-            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#canMovePiece#0" expanded="false" />
             <element signature="n#!!block;n#inspectPos#0" expanded="false" />
-            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
             <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
             <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
-            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+            <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+            <element signature="n#!!block;n#canCapture#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -774,12 +782,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/SquareContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -794,33 +802,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SquareContainer.jsx">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="105">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Validation.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="157" column="47" lean-forward="false" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
+        <state relative-caret-position="87">
+          <caret line="211" column="0" lean-forward="true" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#emitChange#0" expanded="false" />
             <element signature="n#!!block;n#observe#0" expanded="false" />
             <element signature="n#!!block;n#selectPos#0" expanded="false" />
-            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
-            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="n#!!block;n#canMovePiece#0" expanded="false" />
             <element signature="n#!!block;n#inspectPos#0" expanded="false" />
-            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
             <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
             <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
-            <marker date="1503739443000" expanded="false" signature="10631:10867" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="10891:11307" ph="{...}" />
-            <marker date="1503739443000" expanded="false" signature="11340:11735" ph="{...}" />
+            <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+            <element signature="n#!!block;n#canCapture#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
           </folding>
         </state>
       </provider>

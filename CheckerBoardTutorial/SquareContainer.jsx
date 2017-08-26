@@ -12,7 +12,6 @@ const squareTarget = {
 
     drop(props) {
         assignMovedPos(props.x, props.y);
-        capturePiece();
     }
 };
 
