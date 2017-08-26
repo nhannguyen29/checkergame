@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Square from './Square.jsx';
-import {canMovePiece, assignMovedPos} from './Validation.jsx';
+import {canMovePiece, assignMovedPos, capturePiece} from './Validation.jsx';
 import {ItemTypes} from './ItemTypes.jsx';
 import {DropTarget} from 'react-dnd';
 

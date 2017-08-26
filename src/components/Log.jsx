@@ -3,6 +3,7 @@ import { Card, List } from 'semantic-ui-react';
 
 export default class Log extends React.Component {
     render() {
+        const { logItems } = this.props;
         return (
             <Card fluid>
                 <Card.Content>
@@ -11,7 +12,7 @@ export default class Log extends React.Component {
                     </Card.Header>
                 </Card.Content>
                 <Card.Content className="logList">
-                    <List items={['Player 1 moved checker piece from (1,2) to (2,3)']} />    
+                    <List items={logItems} />    
                 </Card.Content>
             </Card>
         );

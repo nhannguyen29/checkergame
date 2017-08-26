@@ -7,7 +7,7 @@ import Turn from './Turn';
 
 export default class GamePage extends React.Component {
     render() {
-        const { selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos } = this.props;
+        const { log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos } = this.props;
         return (
             <Grid
                 textAlign='center'
@@ -24,10 +24,10 @@ export default class GamePage extends React.Component {
                             player1KingPos={player1KingPos}
                             player2KingPos={player2KingPos}
                         />
-                        <Turn isTurn={this.isPlayer1} />
+                        <Turn isTurn={playerTurn} />
                     </Grid.Column>
                     <Grid.Column width={4}>
-                        <Log />
+                        <Log logItems={log} />
                         <GiveUpButton />
                     </Grid.Column>
                 </Grid.Row>

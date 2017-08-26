@@ -56,7 +56,7 @@ class Piece extends Component {
                              height: '90%',
                              width: '90%',
                              borderRadius: '50%',
-                             border: '0.035em solid #9E9E9E'
+                             border: '0.05em solid #FFEB3B'
                          }}>
                     </img>
                 );
@@ -70,7 +70,7 @@ class Piece extends Component {
                              height: '90%',
                              width: '90%',
                              borderRadius: '50%',
-                             border: '0.035em solid #9E9E9E'
+                             border: '0.035em solid #E0E0E0'
                          }}>
                     </img>
                 );
@@ -86,7 +86,7 @@ class Piece extends Component {
                              height: '90%',
                              width: '90%',
                              borderRadius: '50%',
-                             border: '0.035em solid #9E9E9E'
+                             border: '0.05em solid #FFEB3B'
                          }}>
                     </img>
                 );
@@ -100,7 +100,7 @@ class Piece extends Component {
                              height: '90%',
                              width: '90%',
                              borderRadius: '50%',
-                             border: '0.035em solid #9E9E9E'
+                             border: '0.035em solid #E0E0E0'
                          }}>
                     </img>
                 );
