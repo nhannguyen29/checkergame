@@ -29111,7 +29111,7 @@ var _isObject = __webpack_require__(26);
 
 var _isObject2 = _interopRequireDefault(_isObject);
 
-var _matchesType = __webpack_require__(875);
+var _matchesType = __webpack_require__(876);
 
 var _matchesType2 = _interopRequireDefault(_matchesType);
 
@@ -61288,7 +61288,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _DragDropContext = __webpack_require__(873);
+var _DragDropContext = __webpack_require__(874);
 
 Object.defineProperty(exports, 'DragDropContext', {
   enumerable: true,
@@ -61457,6 +61457,127 @@ module.exports = exports['default'];
 
 
 Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+exports.observe = observe;
+exports.selectPos = selectPos;
+exports.canMovePiece = canMovePiece;
+exports.assignMovedPos = assignMovedPos;
+exports.capturePiece = capturePiece;
+var player1PiecesPos = [[0, 5], [2, 5], [4, 5], [6, 5], [1, 6], [3, 6], [5, 6], [7, 6], [0, 7], [2, 7], [4, 7], [6, 7]];
+var player2PiecesPos = [[1, 0], [3, 0], [5, 0], [7, 0], [0, 1], [2, 1], [4, 1], [6, 1], [1, 2], [3, 2], [5, 2], [7, 2]];
+var player1KingPos = [false, false, false, false, false, false, false, false, false, false, false, false];
+var player2KingPos = [false, false, false, false, false, false, false, false, false, false, false, false];
+var isPlayer1 = true;
+var observer = null;
+
+var selectedPos = [0, 0];
+var isKing = false;
+
+function emitChange() {
+    observer(selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos);
+}
+
+function observe(o) {
+    if (observer) {
+        throw new Error('Multiple observers not implemented.');
+    }
+
+    observer = o;
+    emitChange();
+
+    return function () {
+        observer = null;
+    };
+}
+
+function selectPos(pos, argIsPlayer1, argIsKing) {
+    selectedPos = pos;
+    isPlayer1 = argIsPlayer1;
+    isKing = argIsKing;
+
+    emitChange();
+}
+
+function canMovePiece(posX, posY) {
+    var _selectedPos = selectedPos,
+        _selectedPos2 = _slicedToArray(_selectedPos, 2),
+        x = _selectedPos2[0],
+        y = _selectedPos2[1];
+
+    var dx = posX - x;
+    var dy = posY - y;
+
+    if (isKing) {
+        return Math.abs(dx) === 1 && Math.abs(dy) === 1;
+    }
+
+    if (isPlayer1) {
+        return (dx === 1 || dx === -1) && dy === -1;
+    } else {
+        return (dx === 1 || dx === -1) && dy === 1;
+    }
+}
+
+function isKingPos(posY, i) {
+    if (isPlayer1) {
+        if (posY === 0) {
+            // piece position is at top row
+            isKing = true;
+
+            player1KingPos[i] = true;
+        }
+    } else {
+        if (posY === 7) {
+            // piece position is at bottom row
+            isKing = true;
+
+            player2KingPos[i] = true;
+        }
+    }
+}
+
+function assignMovedPos(posX, posY) {
+    if (isPlayer1) {
+        var i = player1PiecesPos.findIndex(function (n) {
+            return selectedPos.every(function (p, q) {
+                return p === n[q];
+            });
+        });
+
+        player1PiecesPos[i] = [posX, posY];
+
+        isKingPos(posY, i);
+    } else {
+        var i = player2PiecesPos.findIndex(function (n) {
+            return selectedPos.every(function (p, q) {
+                return p === n[q];
+            });
+        });
+
+        player2PiecesPos[i] = [posX, posY];
+
+        isKingPos(posY, i);
+    }
+
+    console.log("i: ", i, " pos[]: ", [posX, posY]);
+
+    emitChange();
+}
+
+function capturePiece(posX, posY, argIsPlayer1) {}
+
+/***/ }),
+/* 872 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FILE = exports.FILE = '__NATIVE_FILE__';
@@ -61464,7 +61585,7 @@ var URL = exports.URL = '__NATIVE_URL__';
 var TEXT = exports.TEXT = '__NATIVE_TEXT__';
 
 /***/ }),
-/* 872 */
+/* 873 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61478,7 +61599,7 @@ var ItemTypes = exports.ItemTypes = {
 };
 
 /***/ }),
-/* 873 */
+/* 874 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61605,7 +61726,7 @@ function DragDropContext(backendOrModule) {
 }
 
 /***/ }),
-/* 874 */
+/* 875 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61690,7 +61811,7 @@ function getDifferenceFromInitialOffset(state) {
 }
 
 /***/ }),
-/* 875 */
+/* 876 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61718,7 +61839,7 @@ function matchesType(targetType, draggedItemType) {
 }
 
 /***/ }),
-/* 876 */
+/* 877 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61817,7 +61938,7 @@ function areDirty(state, handlerIds) {
 }
 
 /***/ }),
-/* 877 */
+/* 878 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61865,7 +61986,7 @@ function shallowEqualScalar(objA, objB) {
 }
 
 /***/ }),
-/* 878 */
+/* 879 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61909,7 +62030,7 @@ var _shallowEqual = __webpack_require__(869);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-var _shallowEqualScalar = __webpack_require__(877);
+var _shallowEqualScalar = __webpack_require__(878);
 
 var _shallowEqualScalar2 = _interopRequireDefault(_shallowEqualScalar);
 
@@ -62086,7 +62207,7 @@ function decorateHandler(_ref) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 879 */
+/* 880 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62159,7 +62280,7 @@ function wrapConnectorHooks(hooks) {
 }
 
 /***/ }),
-/* 880 */
+/* 881 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62185,7 +62306,7 @@ function areOptionsEqual(nextOptions, currentOptions) {
 }
 
 /***/ }),
-/* 881 */
+/* 882 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62210,127 +62331,6 @@ function isValidType(type, allowArray) {
               return isValidType(t, false);
        });
 }
-
-/***/ }),
-/* 882 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-exports.observe = observe;
-exports.selectPos = selectPos;
-exports.canMovePiece = canMovePiece;
-exports.assignMovedPos = assignMovedPos;
-exports.capturePiece = capturePiece;
-var player1PiecesPos = [[0, 5], [2, 5], [4, 5], [6, 5], [1, 6], [3, 6], [5, 6], [7, 6], [0, 7], [2, 7], [4, 7], [6, 7]];
-var player2PiecesPos = [[1, 0], [3, 0], [5, 0], [7, 0], [0, 1], [2, 1], [4, 1], [6, 1], [1, 2], [3, 2], [5, 2], [7, 2]];
-var player1KingPos = [false, false, false, false, false, false, false, false, false, false, false, false];
-var player2KingPos = [false, false, false, false, false, false, false, false, false, false, false, false];
-var isPlayer1 = true;
-var observer = null;
-
-var selectedPos = [0, 0];
-var isKing = false;
-
-function emitChange() {
-    observer(selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos);
-}
-
-function observe(o) {
-    if (observer) {
-        throw new Error('Multiple observers not implemented.');
-    }
-
-    observer = o;
-    emitChange();
-
-    return function () {
-        observer = null;
-    };
-}
-
-function selectPos(pos, argIsPlayer1, argIsKing) {
-    selectedPos = pos;
-    isPlayer1 = argIsPlayer1;
-    isKing = argIsKing;
-
-    emitChange();
-}
-
-function canMovePiece(posX, posY) {
-    var _selectedPos = selectedPos,
-        _selectedPos2 = _slicedToArray(_selectedPos, 2),
-        x = _selectedPos2[0],
-        y = _selectedPos2[1];
-
-    var dx = posX - x;
-    var dy = posY - y;
-
-    if (isKing) {
-        return Math.abs(dx) === 1 && Math.abs(dy) === 1;
-    }
-
-    if (isPlayer1) {
-        return (dx === 1 || dx === -1) && dy === -1;
-    } else {
-        return (dx === 1 || dx === -1) && dy === 1;
-    }
-}
-
-function isKingPos(posY, i) {
-    if (isPlayer1) {
-        if (posY === 0) {
-            // piece position is at top row
-            isKing = true;
-
-            player1KingPos[i] = true;
-        }
-    } else {
-        if (posY === 7) {
-            // piece position is at bottom row
-            isKing = true;
-
-            player2KingPos[i] = true;
-        }
-    }
-}
-
-function assignMovedPos(posX, posY) {
-    if (isPlayer1) {
-        var i = player1PiecesPos.findIndex(function (n) {
-            return selectedPos.every(function (p, q) {
-                return p === n[q];
-            });
-        });
-
-        player1PiecesPos[i] = [posX, posY];
-
-        isKingPos(posY, i);
-    } else {
-        var i = player2PiecesPos.findIndex(function (n) {
-            return selectedPos.every(function (p, q) {
-                return p === n[q];
-            });
-        });
-
-        player2PiecesPos[i] = [posX, posY];
-
-        isKingPos(posY, i);
-    }
-
-    console.log("i: ", i, " pos[]: ", [posX, posY]);
-
-    emitChange();
-}
-
-function capturePiece(posX, posY, argIsPlayer1) {}
 
 /***/ }),
 /* 883 */
@@ -62382,7 +62382,7 @@ var _GamePage = __webpack_require__(890);
 
 var _GamePage2 = _interopRequireDefault(_GamePage);
 
-var _Validation = __webpack_require__(882);
+var _Validation = __webpack_require__(871);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62429,6 +62429,10 @@ var _GiveUpButton2 = _interopRequireDefault(_GiveUpButton);
 var _CheckerBoard = __webpack_require__(893);
 
 var _CheckerBoard2 = _interopRequireDefault(_CheckerBoard);
+
+var _Turn = __webpack_require__(946);
+
+var _Turn2 = _interopRequireDefault(_Turn);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62478,7 +62482,8 @@ var GamePage = function (_React$Component) {
                             isPlayer1: isPlayer1,
                             player1KingPos: player1KingPos,
                             player2KingPos: player2KingPos
-                        })
+                        }),
+                        _react2.default.createElement(_Turn2.default, { isTurn: this.isPlayer1 })
                     ),
                     _react2.default.createElement(
                         _semanticUiReact.Grid.Column,
@@ -62849,11 +62854,11 @@ var _propTypes = __webpack_require__(147);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _ItemTypes = __webpack_require__(872);
+var _ItemTypes = __webpack_require__(873);
 
 var _reactDnd = __webpack_require__(867);
 
-var _Validation = __webpack_require__(882);
+var _Validation = __webpack_require__(871);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63505,7 +63510,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = reduce;
 
-var _dragOffset = __webpack_require__(874);
+var _dragOffset = __webpack_require__(875);
 
 var _dragOffset2 = _interopRequireDefault(_dragOffset);
 
@@ -63517,7 +63522,7 @@ var _refCount = __webpack_require__(904);
 
 var _refCount2 = _interopRequireDefault(_refCount);
 
-var _dirtyHandlerIds = __webpack_require__(876);
+var _dirtyHandlerIds = __webpack_require__(877);
 
 var _dirtyHandlerIds2 = _interopRequireDefault(_dirtyHandlerIds);
 
@@ -63769,7 +63774,7 @@ var _isArray = __webpack_require__(13);
 
 var _isArray2 = _interopRequireDefault(_isArray);
 
-var _matchesType = __webpack_require__(875);
+var _matchesType = __webpack_require__(876);
 
 var _matchesType2 = _interopRequireDefault(_matchesType);
 
@@ -63777,9 +63782,9 @@ var _HandlerRegistry = __webpack_require__(909);
 
 var _HandlerRegistry2 = _interopRequireDefault(_HandlerRegistry);
 
-var _dragOffset = __webpack_require__(874);
+var _dragOffset = __webpack_require__(875);
 
-var _dirtyHandlerIds = __webpack_require__(876);
+var _dirtyHandlerIds = __webpack_require__(877);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -64724,7 +64729,7 @@ var _propTypes = __webpack_require__(147);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _DragDropContext = __webpack_require__(873);
+var _DragDropContext = __webpack_require__(874);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -64834,7 +64839,7 @@ var _shallowEqual = __webpack_require__(869);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-var _shallowEqualScalar = __webpack_require__(877);
+var _shallowEqualScalar = __webpack_require__(878);
 
 var _shallowEqualScalar2 = _interopRequireDefault(_shallowEqualScalar);
 
@@ -64979,7 +64984,7 @@ var _checkDecoratorArguments = __webpack_require__(447);
 
 var _checkDecoratorArguments2 = _interopRequireDefault(_checkDecoratorArguments);
 
-var _decorateHandler = __webpack_require__(878);
+var _decorateHandler = __webpack_require__(879);
 
 var _decorateHandler2 = _interopRequireDefault(_decorateHandler);
 
@@ -64999,7 +65004,7 @@ var _createSourceConnector = __webpack_require__(926);
 
 var _createSourceConnector2 = _interopRequireDefault(_createSourceConnector);
 
-var _isValidType = __webpack_require__(881);
+var _isValidType = __webpack_require__(882);
 
 var _isValidType2 = _interopRequireDefault(_isValidType);
 
@@ -65571,11 +65576,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = createSourceConnector;
 
-var _wrapConnectorHooks = __webpack_require__(879);
+var _wrapConnectorHooks = __webpack_require__(880);
 
 var _wrapConnectorHooks2 = _interopRequireDefault(_wrapConnectorHooks);
 
-var _areOptionsEqual = __webpack_require__(880);
+var _areOptionsEqual = __webpack_require__(881);
 
 var _areOptionsEqual2 = _interopRequireDefault(_areOptionsEqual);
 
@@ -65720,7 +65725,7 @@ var _checkDecoratorArguments = __webpack_require__(447);
 
 var _checkDecoratorArguments2 = _interopRequireDefault(_checkDecoratorArguments);
 
-var _decorateHandler = __webpack_require__(878);
+var _decorateHandler = __webpack_require__(879);
 
 var _decorateHandler2 = _interopRequireDefault(_decorateHandler);
 
@@ -65740,7 +65745,7 @@ var _createTargetConnector = __webpack_require__(932);
 
 var _createTargetConnector2 = _interopRequireDefault(_createTargetConnector);
 
-var _isValidType = __webpack_require__(881);
+var _isValidType = __webpack_require__(882);
 
 var _isValidType2 = _interopRequireDefault(_isValidType);
 
@@ -66026,11 +66031,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = createTargetConnector;
 
-var _wrapConnectorHooks = __webpack_require__(879);
+var _wrapConnectorHooks = __webpack_require__(880);
 
 var _wrapConnectorHooks2 = _interopRequireDefault(_wrapConnectorHooks);
 
-var _areOptionsEqual = __webpack_require__(880);
+var _areOptionsEqual = __webpack_require__(881);
 
 var _areOptionsEqual2 = _interopRequireDefault(_areOptionsEqual);
 
@@ -66107,9 +66112,9 @@ var _Square = __webpack_require__(934);
 
 var _Square2 = _interopRequireDefault(_Square);
 
-var _Validation = __webpack_require__(882);
+var _Validation = __webpack_require__(871);
 
-var _ItemTypes = __webpack_require__(872);
+var _ItemTypes = __webpack_require__(873);
 
 var _reactDnd = __webpack_require__(867);
 
@@ -66297,7 +66302,7 @@ var _getEmptyImage = __webpack_require__(945);
 
 var _getEmptyImage2 = _interopRequireDefault(_getEmptyImage);
 
-var _NativeTypes = __webpack_require__(871);
+var _NativeTypes = __webpack_require__(872);
 
 var NativeTypes = _interopRequireWildcard(_NativeTypes);
 
@@ -66342,7 +66347,7 @@ var _OffsetUtils = __webpack_require__(942);
 
 var _NativeDragSources = __webpack_require__(944);
 
-var _NativeTypes = __webpack_require__(871);
+var _NativeTypes = __webpack_require__(872);
 
 var NativeTypes = _interopRequireWildcard(_NativeTypes);
 
@@ -67444,7 +67449,7 @@ var _nativeTypesConfig;
 exports.createNativeDragSource = createNativeDragSource;
 exports.matchNativeItemType = matchNativeItemType;
 
-var _NativeTypes = __webpack_require__(871);
+var _NativeTypes = __webpack_require__(872);
 
 var NativeTypes = _interopRequireWildcard(_NativeTypes);
 
@@ -67567,6 +67572,62 @@ function getEmptyImage() {
 
   return emptyImage;
 }
+
+/***/ }),
+/* 946 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _semanticUiReact = __webpack_require__(145);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Turn = function (_React$Component) {
+    _inherits(Turn, _React$Component);
+
+    function Turn() {
+        _classCallCheck(this, Turn);
+
+        return _possibleConstructorReturn(this, (Turn.__proto__ || Object.getPrototypeOf(Turn)).apply(this, arguments));
+    }
+
+    _createClass(Turn, [{
+        key: 'render',
+        value: function render() {
+            var isTurn = this.props.isTurn;
+
+            var content = isTurn ? "You can go" : "It's not your turn";
+            return _react2.default.createElement(
+                _semanticUiReact.Header,
+                { as: 'h1', textAlign: 'center' },
+                content
+            );
+        }
+    }]);
+
+    return Turn;
+}(_react2.default.Component);
+
+exports.default = Turn;
+;
 
 /***/ })
 /******/ ]);

@@ -3,6 +3,7 @@ import { Grid } from 'semantic-ui-react';
 import Log from './Log';
 import GiveUpButton from './GiveUpButton';
 import CheckerBoard from './CheckerBoard';
+import Turn from './Turn';
 
 export default class GamePage extends React.Component {
     render() {
@@ -23,6 +24,7 @@ export default class GamePage extends React.Component {
                             player1KingPos={player1KingPos}
                             player2KingPos={player2KingPos}
                         />
+                        <Turn isTurn={this.isPlayer1} />
                     </Grid.Column>
                     <Grid.Column width={4}>
                         <Log />
