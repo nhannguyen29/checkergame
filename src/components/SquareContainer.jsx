@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Square from './Square.jsx';
-import {canMovePiece, assignMovedPos, isKingPos} from './Validation.jsx';
+import {canMovePiece, assignMovedPos} from './Validation.jsx';
 import {ItemTypes} from './ItemTypes.jsx';
 import {DropTarget} from 'react-dnd';
 
 const squareTarget = {
     canDrop(props) {
-        return canMovePiece(props.x, props.y, props.isPlayer1, props.isKing);
+        return canMovePiece(props.x, props.y);
     },
 
     drop(props) {
-        isKingPos(props.x, props.y, props.isPlayer1);
         assignMovedPos(props.x, props.y);
     }
 };
@@ -41,7 +40,7 @@ class SquareContainer extends Component {
     }
 
     render() {
-        const {x, y, isPlayer1, isKing, connectDropTarget, isOver, canDrop} = this.props;
+        const {x, y, connectDropTarget, isOver, canDrop} = this.props;
         const black = (x + y) % 2 === 1;
 
         return connectDropTarget(
@@ -64,8 +63,6 @@ class SquareContainer extends Component {
 SquareContainer.propTypes = {
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired,
-    isPlayer1: PropTypes.bool.isRequired,
-    isKing: PropTypes.bool.isRequired,
     isOver: PropTypes.bool.isRequired,
     canDrop: PropTypes.bool
 };

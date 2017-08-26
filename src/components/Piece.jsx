@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {ItemTypes} from './ItemTypes.jsx';
 import {DragSource} from 'react-dnd';
+import {selectPos} from './Validation.jsx';
 
 const pieceSource = {
     beginDrag(props) {
+        selectPos(props.pos, props.isPlayer1, props.isKing);
+
         return {};
     }
 };
@@ -36,8 +39,7 @@ class Piece extends Component {
             }
             else {
                 img.src = './assets/black.png';
-            }        
-        }
+            }        }
         img.onload = () => this.props.connectDragPreview(img);
     }
 

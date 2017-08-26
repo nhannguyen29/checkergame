@@ -6,6 +6,7 @@ import CheckerBoard from './CheckerBoard';
 
 export default class GamePage extends React.Component {
     render() {
+        const { selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos } = this.props;
         return (
             <Grid
                 textAlign='center'
@@ -14,7 +15,14 @@ export default class GamePage extends React.Component {
                 >
                 <Grid.Row>
                     <Grid.Column width={6}>
-                        <CheckerBoard /> 
+                        <CheckerBoard
+                            selectedPos={selectedPos}
+                            player1PiecesPos={player1PiecesPos}
+                            player2PiecesPos={player2PiecesPos}
+                            isPlayer1={isPlayer1}
+                            player1KingPos={player1KingPos}
+                            player2KingPos={player2KingPos}
+                        />
                     </Grid.Column>
                     <Grid.Column width={4}>
                         <Log />

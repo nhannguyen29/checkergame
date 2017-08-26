@@ -5,10 +5,13 @@ const BUILD_DIR = path.resolve(__dirname, 'src/public/js');
 const APP_DIR = path.resolve(__dirname, 'src');
 
 const config = {
-    entry: APP_DIR + '/app.jsx',
+    entry: {
+        lobby: APP_DIR + '/app.jsx',
+        game: APP_DIR + '/game.jsx'
+    },
     output: {
         path: BUILD_DIR,
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         loaders: [{

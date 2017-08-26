@@ -14,9 +14,16 @@ var io = socket_io.listen(server);
 io.on('connection', socketRoute);
 
 app.get('/', (req, res) => {
-   res.render('index');
+   res.render('index', {
+        bundle: 'lobby'
+   });
 });
 
+app.get('/game', (req, res) => {
+    res.render('index', {
+        bundle: 'game'
+    });
+});
 var port = process.env.PORT || 3000;
 var env = process.env.NODE_ENV || 'development';
 

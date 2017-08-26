@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CheckerBoard from './CheckerBoard.jsx';
-import {observe} from './Validation.jsx';
 
 const rootEl = document.getElementById('app');
 

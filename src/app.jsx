@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RouterContext from './components/RouterContext';
+import LobbyPage from './components/LobbyPage';
 
 const app = document.getElementById('app');
-ReactDOM.render(<RouterContext/>, app);
+ReactDOM.render(<LobbyPage/>, app);
