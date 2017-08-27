@@ -13,7 +13,7 @@ export default class GamePage extends React.Component {
                 textAlign='center'
                 style={{ height: '100%' }}
                 verticalAlign='middle'
-                >
+            >
                 <Grid.Row>
                     <Grid.Column width={6}>
                         <CheckerBoard

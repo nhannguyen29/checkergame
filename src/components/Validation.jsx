@@ -246,14 +246,14 @@ export function assignMovedPos(posX, posY) {
     if (isPlayer1) {
         player1PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
 
-        log.push(" > Player 1 just made a move!");
+        log.push(" > Player 1 just moved a piece from [" + selectedPos + "] to [" + [posX, posY] + "]");
 
         isKingPos(posY, i); // check if the new position can be king casted
     }
     else {
         player2PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
 
-        log.push(" > Player 2 just made a move!");
+        log.push(" > Player 2 just moved a piece from [" + selectedPos + "] to [" + [posX, posY] + "]");
 
         isKingPos(posY, i); // check if the new position can be king casted
     }

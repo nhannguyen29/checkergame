@@ -60,7 +60,8 @@ class CheckerBoard extends Component {
                 width: '30em',
                 height: '30em',
                 display: 'flex',
-                flexWrap: 'wrap'
+                flexWrap: 'wrap',
+                margin: ' 0 auto'
             }}>
                 {squares}
             </div>
