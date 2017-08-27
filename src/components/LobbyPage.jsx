@@ -29,7 +29,7 @@ export default class LobbyPage extends React.Component {
                 <Grid.Column style={{ maxWidth: 450 }}>
                     <GameTitle />
                     <UsernameInput setUsername={this.handleUsernameChange.bind(this)} />
-                    <StartButton username={username} />
+                    <StartButton username={username}/>
                 </Grid.Column>
             </Grid>
         );
