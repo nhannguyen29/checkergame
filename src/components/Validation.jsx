@@ -19,14 +19,20 @@ let continueCapture = false;
 let playerTurn = 2;
 let color = 0;
 let gameOver = false;
-let socket = io();
+let result = 0;
 
+// socket
+let socket = io();
 socket.on('init', initialize);
 socket.on('switchTurn', switchTurn);
+socket.on('updateBoard', updateBoard);
 
 function initialize(data) {
     color = data.color;
     console.log(color);
+    if (color == 2) {
+        isPlayer1 = false;
+    }
     emitChange();
 }
 
@@ -35,6 +41,25 @@ function switchTurn() {
     playerTurn = (!(playerTurn-1) + 1)
     console.log(playerTurn);
     emitChange();
+}
+
+function updateBoard(data) {
+    player1PiecesPos = data.player1PiecesPos;
+    player2PiecesPos = data.player2PiecesPos;
+    player1KingPos = data.player1KingPos;
+    player2KingPos = data.player2KingPos;
+    log = data.log;
+    emitChange();
+}
+
+function emitUpdateBoard() {
+    socket.emit('updateBoard', {
+        player1PiecesPos,
+        player2PiecesPos,
+        player1KingPos,
+        player2KingPos,
+        log
+    });
 }
 
 function emitSwitchTurn() {
@@ -372,6 +397,7 @@ export function assignMovedPos(posX, posY) {
         }
     }
 
+    emitUpdateBoard();
     emitChange();
 }
 
@@ -416,7 +442,7 @@ function capturePiece() {
                 && player2PiecesPos.every(function (element) { return compareArrays(firstP2, element)})) {
                 log.push(" > Player 1 WON!");
                 log.push(" > Try harder next time Player 2");
-
+                
                 gameOver = true;
             }
         }

@@ -64,6 +64,11 @@ module.exports = function(socket) {
             console.log("Switch turn");
             client2.emit('switchTurn', {});
         });
+        client1.on('updateBoard', (data) => {
+            console.log("updateBoard");
+            client2.emit('updateBoard', data);
+        });
+
     }
     else if (client2 == undefined) {
         client2 = socket;
@@ -72,6 +77,10 @@ module.exports = function(socket) {
         });
         client2.on('switchTurn', () => {
             client1.emit('switchTurn', {});
+        });
+        client2.on('updateBoard', (data) => {
+            console.log("updateBoard");
+            client1.emit('updateBoard', data);
         });
     }
 
