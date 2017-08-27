@@ -20,7 +20,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StartButton.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartButton.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/StartButton.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -34,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/GameTitle.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="6" column="75" lean-forward="false" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
+              <caret line="6" column="75" lean-forward="false" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -50,28 +50,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Log.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Log.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Log.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="57" />
+              <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validation.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Validation.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="437" column="0" lean-forward="true" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-              <folding>
-                <element signature="e#15900#16057#0" expanded="false" />
-                <element signature="e#16200#16312#0" expanded="false" />
-                <element signature="n#!!block;n#compareArrays#0" expanded="false" />
-                <element signature="e#16423#16468#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -102,10 +87,10 @@
         <option value="$PROJECT_DIR$/src/components/Turn.jsx" />
         <option value="$PROJECT_DIR$/src/components/CheckerBoard.jsx" />
         <option value="$PROJECT_DIR$/src/components/Validation.jsx" />
+        <option value="$PROJECT_DIR$/src/components/StartButton.jsx" />
+        <option value="$PROJECT_DIR$/src/components/GameTitle.jsx" />
         <option value="$PROJECT_DIR$/src/components/GiveUpButton.jsx" />
         <option value="$PROJECT_DIR$/src/components/Log.jsx" />
-        <option value="$PROJECT_DIR$/src/components/GameTitle.jsx" />
-        <option value="$PROJECT_DIR$/src/components/StartButton.jsx" />
       </list>
     </option>
   </component>
@@ -207,7 +192,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8306000" />
+    <option name="totallyTimeSpent" value="8507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -357,45 +342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Validation.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="437" column="0" lean-forward="true" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-          <folding>
-            <element signature="e#15900#16057#0" expanded="false" />
-            <element signature="e#16200#16312#0" expanded="false" />
-            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
-            <element signature="e#16423#16468#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GiveUpButton.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="105" lean-forward="false" selection-start-line="10" selection-start-column="105" selection-end-line="10" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Log.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameTitle.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="75" lean-forward="false" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/GamePage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -409,6 +355,45 @@
         <state relative-caret-position="210">
           <caret line="16" column="116" lean-forward="false" selection-start-line="16" selection-start-column="116" selection-end-line="16" selection-end-column="116" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GameTitle.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="75" lean-forward="false" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GiveUpButton.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="105" lean-forward="false" selection-start-line="10" selection-start-column="105" selection-end-line="10" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Validation.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="437" column="0" lean-forward="true" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+          <folding>
+            <element signature="e#15900#16057#0" expanded="false" />
+            <element signature="e#16200#16312#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="e#16423#16468#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Log.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
