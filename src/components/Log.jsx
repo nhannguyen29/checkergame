@@ -7,7 +7,7 @@ export default class Log extends React.Component {
         return (
             <Card fluid>
                 <Card.Content>
-                    <Card.Header style={{ color: "#D32F2F" }}>
+                    <Card.Header style={{ color: "#B71C1C" }}>
                         Activity Log
                     </Card.Header>
                 </Card.Content>
