@@ -15,7 +15,7 @@ export default class GamePage extends React.Component {
                 verticalAlign='middle'
             >
                 <Grid.Row>
-                    <Grid.Column width={6}>
+                    <Grid.Column width={6} style={{ margin: '1em' }}>
                         <CheckerBoard
                             selectedPos={selectedPos}
                             player1PiecesPos={player1PiecesPos}

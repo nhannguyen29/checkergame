@@ -57,8 +57,8 @@ class CheckerBoard extends Component {
         return (
             <div style={{
                 outline: '0.4em solid #212121',
-                width: '30em',
-                height: '30em',
+                width: '34.5em',
+                height: '34.5em ',
                 display: 'flex',
                 flexWrap: 'wrap',
                 margin: ' 0 auto'
