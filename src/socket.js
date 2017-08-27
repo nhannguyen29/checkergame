@@ -27,6 +27,7 @@ var userNames = (function() {
    // serialize claimed names as an array
    var get = function() {
       var res = [];
+      let user;
       for (user in names) {
          res.push(user);
       }
@@ -50,6 +51,8 @@ var userNames = (function() {
 
 // export function for listening to the socket
 module.exports = function(socket) {
+    console.log("user connected");
+    /*
    var name = userNames.getGuestName();
 
    // send the new user their name and a list of users
@@ -97,4 +100,5 @@ module.exports = function(socket) {
       });
       userNames.free(name);
    });
+   */
 };

@@ -3,7 +3,7 @@ import path from 'path';
 import http from 'http';
 import socket_io from 'socket.io';
 import bodyParser from 'body-parser';
-import socketRoute from './socket.js';
+import socketHandler from './socket.js';
 
 var app = new Express();
 app.set('view engine', 'ejs');
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 var server = http.Server(app);
 var io = socket_io.listen(server);
-io.on('connection', socketRoute);
+io.on('connection', socketHandler);
 
 app.get('/', (req, res) => {
    res.render('index', {
