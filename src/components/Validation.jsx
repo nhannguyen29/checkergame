@@ -31,7 +31,9 @@ function initialize(data) {
 }
 
 function switchTurn() {
+    console.log(playerTurn);
     playerTurn = (!(playerTurn-1) + 1)
+    console.log(playerTurn);
     emitChange();
 }
 
@@ -308,6 +310,7 @@ export function assignMovedPos(posX, posY) {
                         continueCapture = false;
                         captureCount = 0;
                         playerTurn = 2;
+                        emitSwitchTurn();
                     }
                 }
                 else {
@@ -320,6 +323,7 @@ export function assignMovedPos(posX, posY) {
                         continueCapture = false;
                         captureCount = 0;
                         playerTurn = 1;
+                        emitSwitchTurn();
                     }
                 }
             }
@@ -335,6 +339,7 @@ export function assignMovedPos(posX, posY) {
                     continueCapture = false;
                     captureCount = 0;
                     playerTurn = 2;
+                    emitSwitchTurn();
                 }
             }
             else if (isKing && !isPlayer1) {
@@ -349,6 +354,7 @@ export function assignMovedPos(posX, posY) {
                     continueCapture = false;
                     captureCount = 0;
                     playerTurn = 1;
+                    emitSwitchTurn();
                 }
             }
         }
@@ -359,7 +365,7 @@ export function assignMovedPos(posX, posY) {
             else {
                 playerTurn = 1;
             }
-
+            emitSwitchTurn();
             continueCapture = false;
             captureCount = 0;
             turnedKing = false;

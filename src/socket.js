@@ -61,6 +61,7 @@ module.exports = function(socket) {
             client1 = undefined;            
         });
         client1.on('switchTurn', () => {
+            console.log("Switch turn");
             client2.emit('switchTurn', {});
         });
     }
