@@ -5,9 +5,10 @@ import {observe} from './components/Validation';
 
 const app = document.getElementById('app');
 
-observe((log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos) =>
+observe((color, log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos) =>
     ReactDOM.render(
         <GamePage
+            color={color}
             log={log}
             playerTurn={playerTurn}
             selectedPos={selectedPos}

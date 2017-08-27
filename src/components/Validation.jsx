@@ -17,9 +17,30 @@ let captureFlag = false;
 let captureCount = 0;
 let continueCapture = false;
 let playerTurn = 2;
+let color = 0;
+
+let socket = io();
+
+socket.on('init', initialize);
+socket.on('switchTurn', switchTurn);
+
+function initialize(data) {
+    color = data.color;
+    console.log(color);
+    emitChange();
+}
+
+function switchTurn() {
+    playerTurn = (!(playerTurn-1) + 1)
+    emitChange();
+}
+
+function emitSwitchTurn() {
+    socket.emit('switchTurn', {});
+}
 
 function emitChange() {
-    observer(log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos);
+    observer(color, log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos);
 }
 
 export function observe(o) {

@@ -9,6 +9,14 @@ const pieceSource = {
         selectPos(props.pos, props.isPlayer1, props.isKing);
 
         return {};
+    },
+    canDrag(props, monitor) {
+        if ((props.color == 1 && props.isTurn == 1) || (props.color == 2 && props.isTurn == 2)) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 };
 

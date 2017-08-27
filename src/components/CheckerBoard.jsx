@@ -33,7 +33,7 @@ class CheckerBoard extends Component {
         });
 
         if (i !== -1) {
-            return <Piece isPlayer1={true} pos={[x, y]} isKing={this.props.player1KingPos[i]}/>;
+            return <Piece color={this.props.color} isTurn={this.props.isTurn} isPlayer1={true} pos={[x, y]} isKing={this.props.player1KingPos[i]}/>;
         }
 
         // RENDER Player 2 Piece
@@ -44,7 +44,7 @@ class CheckerBoard extends Component {
         });
 
         if (i !== -1) {
-            return <Piece isPlayer1={false} pos={[x, y]} isKing={this.props.player2KingPos[i]}/>;
+            return <Piece color={this.props.color} isTurn={this.props.isTurn} isPlayer1={false} pos={[x, y]} isKing={this.props.player2KingPos[i]}/>;
         }
     }
 

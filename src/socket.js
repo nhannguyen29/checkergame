@@ -49,10 +49,40 @@ var userNames = (function() {
    };
 }());
 
+let client1 = undefined;
+let client2 = undefined;
+
 // export function for listening to the socket
 module.exports = function(socket) {
     console.log("user connected");
-    /*
+    if (client1 == undefined) {
+        client1 = socket;    
+        client1.on('disconnect', () => {
+            client1 = undefined;            
+        });
+        client1.on('switchTurn', () => {
+            client2.emit('switchTurn', {});
+        });
+    }
+    else if (client2 == undefined) {
+        client2 = socket;
+        client2.on('disconnect', () => {
+            client2 = undefined;            
+        });
+        client2.on('switchTurn', () => {
+            client1.emit('switchTurn', {});
+        });
+    }
+
+    if (client1 != undefined && client2 != undefined) { 
+        client1.emit('init', {
+            color: 2
+        });
+        client2.emit('init', {
+            color: 1
+        });
+    }
+        /*
    var name = userNames.getGuestName();
 
    // send the new user their name and a list of users
