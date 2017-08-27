@@ -8,6 +8,6 @@ export default class GiveUpButton extends React.Component {
     }
 
     render() {
-        return <Button onClick={this.handleClick} className='startBtn' color='teal' size='large'>Just Give Up Bra</Button>
+        return <Button onClick={this.handleClick} className='startBtn' style={{ backgroundColor: '#D32F2F', color: '#FAFAFA' }} size='large'>Just Give Up Bra</Button>
     }
 };

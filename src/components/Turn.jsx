@@ -21,10 +21,10 @@ export default class Turn extends React.Component {
         }
         return (
             <div style={{ marginTop : "1em"}}>
-                <Header as='h1' textAlign='center'>
+                <Header as='h1' textAlign='center' style={{ margin: 'auto' }}>
                     {content}
                 </Header>
-                <Header style={{ marginTop : "0 !important"}} as='h3' textAlign='center'>
+                <Header style={{ marginTop : "0 !important", margin: 'inherit' }} as='h3' textAlign='center'>
                     {yourColor}
                 </Header>
             </div>

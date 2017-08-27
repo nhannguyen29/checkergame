@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Form, Segment } from 'semantic-ui-react';
+import {Grid, Form, Segment} from 'semantic-ui-react';
 
 export default class UsernameInput extends React.Component {
     constructor(props) {
@@ -13,8 +13,8 @@ export default class UsernameInput extends React.Component {
 
     render() {
         return (
-            <Form size='large'>
-                <Segment stacked>
+            <Segment>
+                <Form size='large'>
                     <Form.Input
                         fluid
                         icon='user'
@@ -22,8 +22,9 @@ export default class UsernameInput extends React.Component {
                         placeholder='Pick a username'
                         onChange={this.handleOnChange.bind(this)}
                     />
-                </Segment>
-            </Form>
+                </Form>
+            </Segment>
+
         );
     }
 };

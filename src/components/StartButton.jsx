@@ -14,6 +14,6 @@ export default class StartButton extends React.Component {
     }
 
     render() {
-        return <Button onClick={this.handleClick.bind(this)} className='startBtn' color='teal' size='large'>Start</Button>
+        return <Button onClick={this.handleClick.bind(this)} className='startBtn' style={{ backgroundColor: '#D32F2F', color: '#FAFAFA' }} size='large'>Start</Button>
     }
 };

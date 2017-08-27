@@ -57,11 +57,12 @@ class CheckerBoard extends Component {
         return (
             <div style={{
                 outline: '0.4em solid #212121',
-                width: '34.5em',
-                height: '34.5em ',
+                width: '35em',
+                height: '35em ',
                 display: 'flex',
                 flexWrap: 'wrap',
-                margin: ' 0 auto'
+                margin: ' 0 auto',
+                marginTop: '1.5em'
             }}>
                 {squares}
             </div>
