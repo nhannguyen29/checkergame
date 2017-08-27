@@ -253,14 +253,14 @@ export function assignMovedPos(posX, posY) {
 
         log.push(" > Player 1 just moved a piece from [" + selectedPos + "] to [" + [posX, posY] + "]");
 
-        isKingPos(posY, i); // check if the new position can be king casted
+        isKingPos(posX, posY, i); // check if the new position can be king casted
     }
     else {
         player2PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
 
         log.push(" > Player 2 just moved a piece from [" + selectedPos + "] to [" + [posX, posY] + "]");
 
-        isKingPos(posY, i); // check if the new position can be king casted
+        isKingPos(posX, posY, i); // check if the new position can be king casted
     }
 
     var pos = [posX, posY];
@@ -283,7 +283,6 @@ export function assignMovedPos(posX, posY) {
                             || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
                         && captureCount > 0) { // enable double, triple, quad jumps
                         continueCapture = true;
-                        playerTurn = 1; // can still make another capture move
                     }
                     else {
                         continueCapture = false;
@@ -296,7 +295,6 @@ export function assignMovedPos(posX, posY) {
                             || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2))
                         && captureCount > 0) { // enable double, triple, quad jumps
                         continueCapture = true;
-                        playerTurn = 2; // can still make another capture move
                     }
                     else {
                         continueCapture = false;
@@ -312,7 +310,6 @@ export function assignMovedPos(posX, posY) {
                         || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
                     && captureCount > 0) { // enable double, triple, quad jumps
                     continueCapture = true;
-                    playerTurn = 1; // can still make another capture move
                 }
                 else {
                     continueCapture = false;
@@ -327,7 +324,6 @@ export function assignMovedPos(posX, posY) {
                         || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
                     && captureCount > 0) { // enable double, triple, quad jumps
                     continueCapture = true;
-                    playerTurn = 2; // can still make another capture move
                 }
                 else {
                     continueCapture = false;
@@ -353,7 +349,7 @@ export function assignMovedPos(posX, posY) {
     emitChange();
 }
 
-function isKingPos(posY, i) {
+function isKingPos(posX, posY, i) {
     if (isPlayer1) {
         if (posY === 0) { // piece position is at top row
             isKing = true;
@@ -362,7 +358,7 @@ function isKingPos(posY, i) {
 
             turnedKing = true;
 
-            log.push(" > A player 1 piece just turned King.");
+            log.push(" > A player 1 piece just turned King at [" + [posX, posY] + "]");
         }
     }
     else {
@@ -373,7 +369,7 @@ function isKingPos(posY, i) {
 
             turnedKing = true;
 
-            log.push(" > A player 2 piece just turned King.");
+            log.push(" > A player 2 piece just turned King [" + [posX, posY] + "]");
         }
     }
 }
@@ -386,14 +382,14 @@ function capturePiece() {
         if (isPlayer1) {
             player2PiecesPos[i] = [-1, -1];
 
-            log.push(" > Player 1 captured a piece.");
+            log.push(" > Player 1 captured a piece at [" + capturedPiece + "]");
 
             var firstP2 = player2PiecesPos[0];
             // if all elements in opponent's array is [-1, -1] meaning all pieces have been captured
             if (compareArrays(firstP2, [-1, -1])
                 && player2PiecesPos.every(function (element) { return compareArrays(firstP2, element)})) {
-                log.push(" > Player 1 WON!.");
-                log.push(" > Try harder next time Player 2.");
+                log.push(" > Player 1 WON!");
+                log.push(" > Try harder next time Player 2");
 
                 gameOver = true;
             }
@@ -401,14 +397,14 @@ function capturePiece() {
         else {
             player1PiecesPos[i] = [-1, -1];
 
-            log.push(" > Player 2 captured a piece.");
+            log.push(" > Player 2 captured a piece at [" + capturedPiece + "]");
 
             var firstP1 = player1PiecesPos[0];
             // if all elements in opponent's array is [-1, -1] meaning all pieces have been captured
             if (compareArrays(firstP1, [-1, -1])
                 && player1PiecesPos.every(function (element) { return compareArrays(firstP1, element)})) {
-                log.push(" > Player 2 WON!.");
-                log.push(" > Try harder next time Player 1.");
+                log.push(" > Player 2 WON!");
+                log.push(" > Try harder next time Player 1");
 
                 gameOver = true;
             }

@@ -11,8 +11,8 @@ export default class Log extends React.Component {
                         Activity Log
                     </Card.Header>
                 </Card.Content>
-                <Card.Content className="logList">
-                    <List items={logItems} />    
+                <Card.Content className="logList" style={{ overflowY: 'auto' }}>
+                    <List divided relaxed items={logItems}></List>
                 </Card.Content>
             </Card>
         );
