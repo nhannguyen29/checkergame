@@ -2,12 +2,15 @@ import Express from 'express';
 import path from 'path';
 import http from 'http';
 import socket_io from 'socket.io';
+import bodyParser from 'body-parser';
 import socketRoute from './socket.js';
 
 var app = new Express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(Express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 var server = http.Server(app);
 var io = socket_io.listen(server);
@@ -24,6 +27,12 @@ app.get('/game', (req, res) => {
         bundle: 'game'
     });
 });
+
+app.post('/newPlayer', (req, res) => {
+    console.log(req.body);
+    res.sendStatus(200);    
+});
+
 var port = process.env.PORT || 3000;
 var env = process.env.NODE_ENV || 'development';
 

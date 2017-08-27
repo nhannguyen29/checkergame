@@ -5,17 +5,31 @@ import StartButton from './StartButton';
 import { Grid } from 'semantic-ui-react'
 
 export default class LobbyPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: ""
+        };
+    }
+
+    handleUsernameChange(username) {
+        this.setState({
+            username
+        });
+    }
+
     render() {
+        const { username } = this.state;
         return (
             <Grid
                 textAlign='center'
                 style={{ height: '100%' }}
                 verticalAlign='middle'
-                >
+            >
                 <Grid.Column style={{ maxWidth: 450 }}>
                     <GameTitle />
-                    <UsernameInput />
-                    <StartButton />
+                    <UsernameInput setUsername={this.handleUsernameChange.bind(this)} />
+                    <StartButton username={username} />
                 </Grid.Column>
             </Grid>
         );

@@ -1,13 +1,19 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
+import axios from 'axios';
 
 export default class StartButton extends React.Component {
     handleClick(e) {
         e.preventDefault();
-        console.log("Hello");
+        const { username } = this.props;
+        axios.post("/newPlayer", {
+            username
+        }).then((res) => {
+            window.location.href = "/game";
+        });
     }
 
     render() {
-        return <Button onClick={this.handleClick} className='startBtn' color='teal' size='large'>Start</Button>
+        return <Button onClick={this.handleClick.bind(this)} className='startBtn' color='teal' size='large'>Start</Button>
     }
 };
