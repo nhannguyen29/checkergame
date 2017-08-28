@@ -30,7 +30,7 @@ socket.on('init', initialize);
 socket.on('switchTurn', switchTurn);
 socket.on('updateBoard', updateBoard);
 socket.on('otherGiveUp', otherGiveUp);
-socket.on('gameOver', setGameOver);
+socket.on('setGameOver', setGameOver);
 
 function setGameOver() {
     modalContent = "You LOSE!";
