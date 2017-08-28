@@ -2,11 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2dbadf2-306b-46d5-b581-15766a71d9c3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/PopupModal.jsx" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/.idea/CheckerBoard.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/CheckerBoard.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/ItemTypes.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/Piece.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/Square.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/SquareContainer.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/Validation.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/black-king.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/package-lock.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/red-king.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CheckerBoardTutorial/webpack.config.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/GameTitle.jsx" afterPath="$PROJECT_DIR$/src/components/GameTitle.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/GamePage.jsx" afterPath="$PROJECT_DIR$/src/components/GamePage.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/GiveUpButton.jsx" afterPath="$PROJECT_DIR$/src/components/GiveUpButton.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Log.jsx" afterPath="$PROJECT_DIR$/src/components/Log.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/StartButton.jsx" afterPath="$PROJECT_DIR$/src/components/StartButton.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Validation.jsx" afterPath="$PROJECT_DIR$/src/components/Validation.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.jsx" afterPath="$PROJECT_DIR$/src/game.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,43 +40,136 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StartButton.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/StartButton.jsx">
+      <file leaf-file-name="game.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="116" lean-forward="false" selection-start-line="16" selection-start-column="116" selection-end-line="16" selection-end-column="116" />
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameTitle.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/GameTitle.jsx">
+      <file leaf-file-name="GamePage.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/GamePage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" column="75" lean-forward="false" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GiveUpButton.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/GiveUpButton.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="105" lean-forward="false" selection-start-line="10" selection-start-column="105" selection-end-line="10" selection-end-column="105" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Log.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Log.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+            <state relative-caret-position="213">
+              <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validation.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Validation.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="109" column="60" lean-forward="false" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+              <folding>
+                <element signature="e#1053#1087#0" expanded="false" />
+                <element signature="n#!!block;n#switchTurn#0" expanded="false" />
+                <element signature="n#!!block;n#emitUpdateBoard#0" expanded="false" />
+                <element signature="e#1499#1618#0" expanded="false" />
+                <element signature="n#!!block;n#emitSwitchTurn#0" expanded="false" />
+                <element signature="n#!!block;n#observe#0" expanded="false" />
+                <element signature="e#1918#1989#0" expanded="false" />
+                <element signature="e#2045#2077#0" expanded="false" />
+                <element signature="n#!!block;n#selectPos#0" expanded="false" />
+                <element signature="e#2377#2406#0" expanded="false" />
+                <element signature="e#2447#2476#0" expanded="false" />
+                <element signature="e#2522#2551#0" expanded="false" />
+                <element signature="e#2600#2684#0" expanded="false" />
+                <element signature="e#2745#2841#0" expanded="false" />
+                <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+                <element signature="e#2963#3055#0" expanded="false" />
+                <element signature="e#3006#3047#0" expanded="false" />
+                <element signature="e#3077#3192#0" expanded="false" />
+                <element signature="e#3246#3338#0" expanded="false" />
+                <element signature="e#3289#3330#0" expanded="false" />
+                <element signature="e#3360#3475#0" expanded="false" />
+                <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+                <element signature="e#3615#3746#0" expanded="false" />
+                <element signature="e#3767#3896#0" expanded="false" />
+                <element signature="e#3906#4028#0" expanded="false" />
+                <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+                <element signature="e#4198#4227#0" expanded="false" />
+                <element signature="e#4308#9112#0" expanded="false" />
+                <element signature="e#4490#6630#0" expanded="false" />
+                <element signature="e#4519#5570#0" expanded="false" />
+                <element signature="e#4633#5035#0" expanded="false" />
+                <element signature="e#4635#4680#0" expanded="false" />
+                <element signature="e#5151#5556#0" expanded="false" />
+                <element signature="e#5153#5199#0" expanded="false" />
+                <element signature="e#5576#6620#0" expanded="false" />
+                <element signature="e#5688#6089#0" expanded="false" />
+                <element signature="e#5690#5736#0" expanded="false" />
+                <element signature="e#6203#6606#0" expanded="false" />
+                <element signature="e#6205#6251#0" expanded="false" />
+                <element signature="e#6636#9106#0" expanded="false" />
+                <element signature="e#6746#7250#0" expanded="false" />
+                <element signature="e#6748#6793#0" expanded="false" />
+                <element signature="e#6942#7006#0" expanded="false" />
+                <element signature="e#7028#7091#0" expanded="false" />
+                <element signature="e#7358#7861#0" expanded="false" />
+                <element signature="e#7360#7405#0" expanded="false" />
+                <element signature="e#7554#7618#0" expanded="false" />
+                <element signature="e#7640#7703#0" expanded="false" />
+                <element signature="e#7973#8480#0" expanded="false" />
+                <element signature="e#7975#8021#0" expanded="false" />
+                <element signature="e#8171#8235#0" expanded="false" />
+                <element signature="e#8257#8320#0" expanded="false" />
+                <element signature="e#8590#9096#0" expanded="false" />
+                <element signature="e#8592#8638#0" expanded="false" />
+                <element signature="e#8788#8852#0" expanded="false" />
+                <element signature="e#8874#8937#0" expanded="false" />
+                <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+                <element signature="e#9248#9365#0" expanded="false" />
+                <element signature="e#9375#9404#0" expanded="false" />
+                <element signature="n#!!block;n#canCapture#0" expanded="false" />
+                <element signature="e#9481#9528#0" expanded="false" />
+                <element signature="e#9583#9633#0" expanded="false" />
+                <element signature="e#9689#9739#0" expanded="false" />
+                <element signature="e#9795#9844#0" expanded="false" />
+                <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+                <element signature="e#10860#10949#0" expanded="false" />
+                <element signature="e#10991#14023#0" expanded="false" />
+                <element signature="e#11018#13723#0" expanded="false" />
+                <element signature="e#11197#12350#0" expanded="false" />
+                <element signature="e#11230#11773#0" expanded="false" />
+                <element signature="e#11425#11533#0" expanded="false" />
+                <element signature="e#11559#11755#0" expanded="false" />
+                <element signature="e#11795#12336#0" expanded="false" />
+                <element signature="e#11988#12096#0" expanded="false" />
+                <element signature="e#12122#12318#0" expanded="false" />
+                <element signature="e#12393#13031#0" expanded="false" />
+                <element signature="e#12719#12819#0" expanded="false" />
+                <element signature="e#12841#13017#0" expanded="false" />
+                <element signature="e#13075#13713#0" expanded="false" />
+                <element signature="e#13401#13501#0" expanded="false" />
+                <element signature="e#13523#13699#0" expanded="false" />
+                <element signature="e#13766#13813#0" expanded="false" />
+                <element signature="e#13831#13878#0" expanded="false" />
+                <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+                <element signature="e#14396#14658#0" expanded="false" />
+                <element signature="e#14422#14652#0" expanded="false" />
+                <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+                <element signature="e#16365#16477#0" expanded="false" />
+                <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+                <element signature="e#16588#16633#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PopupModal.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/PopupModal.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="7" column="82" lean-forward="false" selection-start-line="7" selection-start-column="82" selection-end-line="7" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,16 +194,18 @@
       <list>
         <option value="$PROJECT_DIR$/src/components/SquareContainer.jsx" />
         <option value="$PROJECT_DIR$/src/components/Piece.jsx" />
-        <option value="$PROJECT_DIR$/src/components/GamePage.jsx" />
         <option value="$PROJECT_DIR$/src/components/UsernameInput.jsx" />
         <option value="$PROJECT_DIR$/src/components/LobbyPage.jsx" />
         <option value="$PROJECT_DIR$/src/components/Turn.jsx" />
         <option value="$PROJECT_DIR$/src/components/CheckerBoard.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Validation.jsx" />
         <option value="$PROJECT_DIR$/src/components/StartButton.jsx" />
         <option value="$PROJECT_DIR$/src/components/GameTitle.jsx" />
-        <option value="$PROJECT_DIR$/src/components/GiveUpButton.jsx" />
         <option value="$PROJECT_DIR$/src/components/Log.jsx" />
+        <option value="$PROJECT_DIR$/src/game.jsx" />
+        <option value="$PROJECT_DIR$/src/components/GiveUpButton.jsx" />
+        <option value="$PROJECT_DIR$/src/components/GamePage.jsx" />
+        <option value="$PROJECT_DIR$/src/components/PopupModal.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Validation.jsx" />
       </list>
     </option>
   </component>
@@ -103,7 +218,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/CheckerBoardTutorial/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
@@ -112,7 +226,9 @@
     <option name="width" value="891" />
     <option name="height" value="773" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -192,7 +308,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8507000" />
+    <option name="totallyTimeSpent" value="13971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -235,7 +351,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -255,7 +371,7 @@
         <state relative-caret-position="259">
           <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
-            <element signature="e#0#26#0" expanded="false" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -301,17 +417,7 @@
         <state relative-caret-position="149">
           <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LobbyPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -334,30 +440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CheckerBoard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="60" column="26" lean-forward="false" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GamePage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/StartButton.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="116" lean-forward="false" selection-start-line="16" selection-start-column="116" selection-end-line="16" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/GameTitle.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -366,33 +448,207 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GiveUpButton.jsx">
+    <entry file="file://$PROJECT_DIR$/src/app.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="105" lean-forward="false" selection-start-line="10" selection-start-column="105" selection-end-line="10" selection-end-column="105" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LobbyPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Validation.jsx">
+    <entry file="file://$PROJECT_DIR$/src/socket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="437" column="0" lean-forward="true" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+        <state relative-caret-position="-388">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15900#16057#0" expanded="false" />
-            <element signature="e#16200#16312#0" expanded="false" />
-            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
-            <element signature="e#16423#16468#0" expanded="false" />
+            <element signature="e#0#30#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/StartButton.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Log.jsx">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CheckerBoard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GiveUpButton.jsx">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GamePage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PopupModal.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="82" lean-forward="false" selection-start-line="7" selection-start-column="82" selection-end-line="7" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Validation.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="109" column="60" lean-forward="false" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+          <folding>
+            <element signature="e#1053#1087#0" expanded="false" />
+            <element signature="n#!!block;n#switchTurn#0" expanded="false" />
+            <element signature="n#!!block;n#emitUpdateBoard#0" expanded="false" />
+            <element signature="e#1499#1618#0" expanded="false" />
+            <element signature="n#!!block;n#emitSwitchTurn#0" expanded="false" />
+            <element signature="n#!!block;n#observe#0" expanded="false" />
+            <element signature="e#1918#1989#0" expanded="false" />
+            <element signature="e#2045#2077#0" expanded="false" />
+            <element signature="n#!!block;n#selectPos#0" expanded="false" />
+            <element signature="e#2377#2406#0" expanded="false" />
+            <element signature="e#2447#2476#0" expanded="false" />
+            <element signature="e#2522#2551#0" expanded="false" />
+            <element signature="e#2600#2684#0" expanded="false" />
+            <element signature="e#2745#2841#0" expanded="false" />
+            <element signature="n#!!block;n#inspectPos#0" expanded="false" />
+            <element signature="e#2963#3055#0" expanded="false" />
+            <element signature="e#3006#3047#0" expanded="false" />
+            <element signature="e#3077#3192#0" expanded="false" />
+            <element signature="e#3246#3338#0" expanded="false" />
+            <element signature="e#3289#3330#0" expanded="false" />
+            <element signature="e#3360#3475#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveToRange#0" expanded="false" />
+            <element signature="e#3615#3746#0" expanded="false" />
+            <element signature="e#3767#3896#0" expanded="false" />
+            <element signature="e#3906#4028#0" expanded="false" />
+            <element signature="n#!!block;n#isJumpSquareEmpty#0" expanded="false" />
+            <element signature="e#4198#4227#0" expanded="false" />
+            <element signature="e#4308#9112#0" expanded="false" />
+            <element signature="e#4490#6630#0" expanded="false" />
+            <element signature="e#4519#5570#0" expanded="false" />
+            <element signature="e#4633#5035#0" expanded="false" />
+            <element signature="e#4635#4680#0" expanded="false" />
+            <element signature="e#5151#5556#0" expanded="false" />
+            <element signature="e#5153#5199#0" expanded="false" />
+            <element signature="e#5576#6620#0" expanded="false" />
+            <element signature="e#5688#6089#0" expanded="false" />
+            <element signature="e#5690#5736#0" expanded="false" />
+            <element signature="e#6203#6606#0" expanded="false" />
+            <element signature="e#6205#6251#0" expanded="false" />
+            <element signature="e#6636#9106#0" expanded="false" />
+            <element signature="e#6746#7250#0" expanded="false" />
+            <element signature="e#6748#6793#0" expanded="false" />
+            <element signature="e#6942#7006#0" expanded="false" />
+            <element signature="e#7028#7091#0" expanded="false" />
+            <element signature="e#7358#7861#0" expanded="false" />
+            <element signature="e#7360#7405#0" expanded="false" />
+            <element signature="e#7554#7618#0" expanded="false" />
+            <element signature="e#7640#7703#0" expanded="false" />
+            <element signature="e#7973#8480#0" expanded="false" />
+            <element signature="e#7975#8021#0" expanded="false" />
+            <element signature="e#8171#8235#0" expanded="false" />
+            <element signature="e#8257#8320#0" expanded="false" />
+            <element signature="e#8590#9096#0" expanded="false" />
+            <element signature="e#8592#8638#0" expanded="false" />
+            <element signature="e#8788#8852#0" expanded="false" />
+            <element signature="e#8874#8937#0" expanded="false" />
+            <element signature="n#!!block;n#isSquareEmpty#0" expanded="false" />
+            <element signature="e#9248#9365#0" expanded="false" />
+            <element signature="e#9375#9404#0" expanded="false" />
+            <element signature="n#!!block;n#canCapture#0" expanded="false" />
+            <element signature="e#9481#9528#0" expanded="false" />
+            <element signature="e#9583#9633#0" expanded="false" />
+            <element signature="e#9689#9739#0" expanded="false" />
+            <element signature="e#9795#9844#0" expanded="false" />
+            <element signature="n#!!block;n#assignMovedPos#0" expanded="false" />
+            <element signature="e#10860#10949#0" expanded="false" />
+            <element signature="e#10991#14023#0" expanded="false" />
+            <element signature="e#11018#13723#0" expanded="false" />
+            <element signature="e#11197#12350#0" expanded="false" />
+            <element signature="e#11230#11773#0" expanded="false" />
+            <element signature="e#11425#11533#0" expanded="false" />
+            <element signature="e#11559#11755#0" expanded="false" />
+            <element signature="e#11795#12336#0" expanded="false" />
+            <element signature="e#11988#12096#0" expanded="false" />
+            <element signature="e#12122#12318#0" expanded="false" />
+            <element signature="e#12393#13031#0" expanded="false" />
+            <element signature="e#12719#12819#0" expanded="false" />
+            <element signature="e#12841#13017#0" expanded="false" />
+            <element signature="e#13075#13713#0" expanded="false" />
+            <element signature="e#13401#13501#0" expanded="false" />
+            <element signature="e#13523#13699#0" expanded="false" />
+            <element signature="e#13766#13813#0" expanded="false" />
+            <element signature="e#13831#13878#0" expanded="false" />
+            <element signature="n#!!block;n#isKingPos#0" expanded="false" />
+            <element signature="e#14396#14658#0" expanded="false" />
+            <element signature="e#14422#14652#0" expanded="false" />
+            <element signature="n#!!block;n#capturePiece#0" expanded="false" />
+            <element signature="e#16365#16477#0" expanded="false" />
+            <element signature="n#!!block;n#compareArrays#0" expanded="false" />
+            <element signature="e#16588#16633#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -4,10 +4,11 @@ import Log from './Log';
 import GiveUpButton from './GiveUpButton';
 import CheckerBoard from './CheckerBoard';
 import Turn from './Turn';
+import PopupModal from "./PopupModal";
 
 export default class GamePage extends React.Component {
     render() {
-        const { color, log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos } = this.props;
+        const { gameOver, modalContent, color, log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos } = this.props;
         return (
             <Grid
                 textAlign='center'
@@ -30,7 +31,7 @@ export default class GamePage extends React.Component {
                     </Grid.Column>
                     <Grid.Column width={4}>
                         <Log logItems={log} />
-                        <GiveUpButton />
+                        <PopupModal gameOver={gameOver} modalContent={modalContent} />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
