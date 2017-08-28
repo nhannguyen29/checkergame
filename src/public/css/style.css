@@ -18,3 +18,14 @@ body > div, body > div > div, body > div > div > div.appContainer {
     text-align: left;
     height: 32em;
 }
+
+.pusher {
+    height: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.pusher > .footer {
+    flex: 1;
+}

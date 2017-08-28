@@ -2,7 +2,8 @@ import React from 'react';
 import GameTitle from './GameTitle';
 import UsernameInput from './UsernameInput';
 import StartButton from './StartButton';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Header } from 'semantic-ui-react'
+import Footer from './Footer';
 
 export default class LobbyPage extends React.Component {
     constructor(props) {
@@ -21,17 +22,20 @@ export default class LobbyPage extends React.Component {
     render() {
         const { username } = this.state;
         return (
-            <Grid
-                textAlign='center'
-                style={{ height: '100%' }}
-                verticalAlign='middle'
-            >
-                <Grid.Column style={{ maxWidth: 450 }}>
-                    <GameTitle />
-                    <UsernameInput setUsername={this.handleUsernameChange.bind(this)} />
-                    <StartButton username={username}/>
-                </Grid.Column>
-            </Grid>
+            <div className="pusher">
+                <Grid
+                    textAlign='center'
+                    style={{ height: '100%' }}
+                    verticalAlign='middle'
+                >
+                    <Grid.Column style={{ maxWidth: 450 }}>
+                        <GameTitle />
+                        <UsernameInput setUsername={this.handleUsernameChange.bind(this)} />
+                        <StartButton username={username}/>
+                    </Grid.Column>
+                </Grid>
+                <Footer />
+            </div>
         );
     }
 };
