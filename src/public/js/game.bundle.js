@@ -66198,7 +66198,7 @@ var Log = function (_React$Component) {
                 _react2.default.createElement(
                     _semanticUiReact.Card.Content,
                     { className: 'logList', style: { overflowY: 'auto' } },
-                    _react2.default.createElement(_semanticUiReact.List, { items: logItems.map(function (item, i) {
+                    _react2.default.createElement(_semanticUiReact.List, { relaxed: true, divided: true, items: logItems.map(function (item, i) {
                             return { content: item, key: i };
                         }) })
                 )
