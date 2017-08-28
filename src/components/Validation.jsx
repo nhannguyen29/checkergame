@@ -1,3 +1,5 @@
+import io from 'socket.io-client';
+
 let player1PiecesPos = [[0, 5], [2, 5], [4, 5], [6, 5], [1, 6], [3, 6], [5, 6], [7, 6], [0, 7], [2, 7], [4, 7], [6, 7]];
 let player2PiecesPos = [[1, 0], [3, 0], [5, 0], [7, 0], [0, 1], [2, 1], [4, 1], [6, 1], [1, 2], [3, 2], [5, 2], [7, 2]];
 let player1KingPos = [false, false, false, false, false, false, false, false, false, false, false, false];
@@ -7,8 +9,8 @@ let observer = null;
 let log = [];
 let modalContent = null;
 let gameOver = false;
-let modalSize = null;
-
+let modalSize = "mini";
+let username = "";
 let selectedPos = [0, 0];
 let isKing = false;
 let turnedKing = false;
@@ -27,9 +29,24 @@ let socket = io();
 socket.on('init', initialize);
 socket.on('switchTurn', switchTurn);
 socket.on('updateBoard', updateBoard);
+socket.on('otherGiveUp', otherGiveUp);
+socket.on('gameOver', setGameOver);
+
+function setGameOver() {
+    modalContent = "You LOSE!";
+    gameOver = true;
+    emitChange();
+}
+
+function otherGiveUp() {
+    modalContent = "The other player gave up. You WON!";    
+    gameOver = true;
+    emitChange();
+}
 
 function initialize(data) {
     color = data.color;
+    username = data.username;
     if (color == 2) {
         isPlayer1 = false;
     }
@@ -48,6 +65,13 @@ function updateBoard(data) {
     player2KingPos = data.player2KingPos;
     log = data.log;
     emitChange();
+}
+
+function emitGameOver() {
+    socket.emit('gameOver', {});
+}
+function emitGiveUp() {
+    socket.emit('giveup', {});    
 }
 
 function emitUpdateBoard() {
@@ -298,7 +322,7 @@ export function assignMovedPos(posX, posY) {
     if (isPlayer1) {
         player1PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
 
-        log.push(" > Player 1 just moved a piece from [" + selectedPos + "] to [" + [posX, posY] + "]");
+        log.push(" > " + username + " just moved a piece from [" + selectedPos + "] to [" + [posX, posY] + "]");
 
         if (!player1KingPos[i]) {
             isKingPos(posX, posY, i); // check if the new position can be king casted
@@ -308,7 +332,7 @@ export function assignMovedPos(posX, posY) {
     else {
         player2PiecesPos[i] = [posX, posY]; // assign new position to the indexed element
 
-        log.push(" > Player 2 just moved a piece from [" + selectedPos + "] to [" + [posX, posY] + "]");
+        log.push(" > " + username + " just moved a piece from [" + selectedPos + "] to [" + [posX, posY] + "]");
 
         if (!player2KingPos[i]) {
             isKingPos(posX, posY, i); // check if the new position can be king casted
@@ -418,7 +442,7 @@ function isKingPos(posX, posY, i) {
 
             turnedKing = true;
 
-            log.push(" > A player 1 piece just turned King at [" + [posX, posY] + "]");
+            log.push(" > A piece of " + username + " just turned King at [" + [posX, posY] + "]");
         }
     }
     else {
@@ -429,7 +453,7 @@ function isKingPos(posX, posY, i) {
 
             turnedKing = true;
 
-            log.push(" > A player 2 piece just turned King [" + [posX, posY] + "]");
+            log.push(" > A piece of " + username + " just turned King at [" + [posX, posY] + "]");
         }
     }
 }
@@ -442,37 +466,35 @@ function capturePiece() {
         if (isPlayer1) {
             player2PiecesPos[i] = [-1, -1];
 
-            log.push(" > Player 1 captured a piece at [" + capturedPiece + "]");
+            log.push(" > " + username + " captured a piece at [" + capturedPiece + "]");
 
             var firstP2 = player2PiecesPos[0];
             // if all elements in opponent's array is [-1, -1] meaning all pieces have been captured
             if (compareArrays(firstP2, [-1, -1])
                 && player2PiecesPos.every(function (element) { return compareArrays(firstP2, element)})) {
-                log.push(" > Player 1 WON!");
-                log.push(" > Try harder next time Player 2");
+                log.push(" > You WON!");
 
-                modalContent = "Player 1 WON! Try harder next time Player 2 :(";
+                modalContent = "You WON!";
                 modalSize = "tiny";
-
                 gameOver = true;
+                emitGameOver();
             }
         }
         else {
             player1PiecesPos[i] = [-1, -1];
 
-            log.push(" > Player 2 captured a piece at [" + capturedPiece + "]");
+            log.push(" > " + username + " captured a piece at [" + capturedPiece + "]");
 
             var firstP1 = player1PiecesPos[0];
             // if all elements in opponent's array is [-1, -1] meaning all pieces have been captured
             if (compareArrays(firstP1, [-1, -1])
                 && player1PiecesPos.every(function (element) { return compareArrays(firstP1, element)})) {
-                log.push(" > Player 2 WON!");
-                log.push(" > Try harder next time Player 1");
+                log.push(" > You WON!");
 
-                modalContent = "Player 2 WON! Try harder next time Player 1 :(";
+                modalContent = "You WON!";
                 modalSize = "tiny";
-
                 gameOver = true;
+                emitGameOver();
             }
         }
 
@@ -498,6 +520,6 @@ export function giveup() {
     gameOver = true;
     modalContent = "You rage quit :(";
     modalSize = "mini";
-
     emitChange();
+    emitGiveUp();
 }

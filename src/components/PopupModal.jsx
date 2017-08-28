@@ -2,22 +2,7 @@ import React, {Component} from 'react'
 import {Button, Header, Modal} from 'semantic-ui-react'
 
 export default class PopupModal extends Component {
-    constructor(props) {
-        super(props);
-        // save the popup state
-        this.state = { modalOpen: this.props.gameOver, modalContent: this.props.modalContent}
-    }
-    //
-    // handleOpen(e) {
-    //     this.setState({modalOpen: true, modalContent: 'You gave up!'})
-    // }
-    //
-    handleClose(e) {
-        this.setState({modalOpen: false, modalContent: ''})
-    }
-
     backToLobby(e) {
-        this.setState({modalOpen: false, modalContent: ''})
         e.preventDefault();
         window.location.href = "/";
     }
