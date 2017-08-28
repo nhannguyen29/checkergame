@@ -51,14 +51,29 @@ var userNames = (function() {
 
 let client1 = undefined;
 let client2 = undefined;
+let username1 = "";
+let username2 = "";
+
+export function setUsername(username) {
+    if (username1 == "") {
+        username1 = username;
+    }
+    else if (username2 == "") {
+        username2 = username;
+    }
+    else {
+        return;
+    }
+};
 
 // export function for listening to the socket
-module.exports = function(socket) {
+export default function(socket) {
     console.log("user connected");
     if (client1 == undefined) {
         client1 = socket;    
         client1.on('disconnect', () => {
             client1 = undefined;            
+            username1 = "";
         });
         client1.on('switchTurn', () => {
             console.log("Switch turn");
@@ -68,12 +83,18 @@ module.exports = function(socket) {
             console.log("updateBoard");
             client2.emit('updateBoard', data);
         });
-
+        client1.on('giveup', () => {
+            client2.emit('otherGiveUp', {});
+        });
+        client1.on('gameOver', () => {
+            client2.emit('setGameOver', {});
+        });
     }
     else if (client2 == undefined) {
         client2 = socket;
         client2.on('disconnect', () => {
             client2 = undefined;            
+            username2 = "";
         });
         client2.on('switchTurn', () => {
             client1.emit('switchTurn', {});
@@ -82,14 +103,25 @@ module.exports = function(socket) {
             console.log("updateBoard");
             client1.emit('updateBoard', data);
         });
+        client2.on('giveup', () => {
+            client1.emit('otherGiveUp', {});
+        });
+        client2.on('gameOver', () => {
+            client1.emit('setGameOver', {});
+        });
+    }
+    else {
+        return;
     }
 
     if (client1 != undefined && client2 != undefined) { 
         client1.emit('init', {
-            color: 2
+            color: 2,
+            username: username1
         });
         client2.emit('init', {
-            color: 1
+            color: 1,
+            username: username2
         });
     }
         /*

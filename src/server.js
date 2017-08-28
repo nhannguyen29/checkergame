@@ -4,6 +4,7 @@ import http from 'http';
 import socket_io from 'socket.io';
 import bodyParser from 'body-parser';
 import socketHandler from './socket.js';
+import { setUsername } from './socket.js';
 
 var app = new Express();
 app.set('view engine', 'ejs');
@@ -29,7 +30,7 @@ app.get('/game', (req, res) => {
 });
 
 app.post('/newPlayer', (req, res) => {
-    console.log(req.body);
+    setUsername(req.body.username);
     res.sendStatus(200);    
 });
 
