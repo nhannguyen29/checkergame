@@ -68140,6 +68140,8 @@ var Turn = function (_React$Component) {
             var content = void 0;
             if (color == 1 && isTurn == 1 || color == 2 && isTurn == 2) {
                 content = "You can go";
+            } else if (color == 0) {
+                content = "Waiting for another player";
             } else {
                 content = "It's not your turn";
             }
