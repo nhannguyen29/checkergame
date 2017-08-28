@@ -5,13 +5,13 @@ export default class PopupModal extends Component {
     constructor(props) {
         super(props);
         // save the popup state
-        this.state = { modalOpen: props.gameOver, modalContent: props.modalContent}
+        this.state = { modalOpen: this.props.gameOver, modalContent: this.props.modalContent}
     }
-
-    handleOpen(e) {
-        this.setState({modalOpen: true, modalContent: 'You gave up!'})
-    }
-
+    //
+    // handleOpen(e) {
+    //     this.setState({modalOpen: true, modalContent: 'You gave up!'})
+    // }
+    //
     handleClose(e) {
         this.setState({modalOpen: false, modalContent: ''})
     }
@@ -23,19 +23,16 @@ export default class PopupModal extends Component {
     }
 
     render() {
-        const { gameOver, modalContent } = this.props;
-
         return (
             <Modal
-                trigger={<Button onClick={this.handleOpen.bind(this)} className='startBtn' style={{backgroundColor: '#009688', color: '#FAFAFA'}} size='large'>I Give Up :(</Button>}
-                open={this.state.modalOpen}
-                onClose={this.handleClose.bind(this)}
+                open={this.props.gameOver}
+                // onClose={this.handleClose.bind(this)}
                 basic
-                size='mini'
+                size={this.props.modalSize}
             >
                 <Header icon='announcement' content='Game Over'/>
                 <Modal.Content>
-                    <h3>{this.state.modalContent}</h3>
+                    <h3>{this.props.modalContent}</h3>
                 </Modal.Content>
                 <Modal.Actions>
                     <Button style={{backgroundColor: '#009688', color: '#FAFAFA'}} onClick={this.backToLobby.bind(this)} inverted>

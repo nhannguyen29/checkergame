@@ -8,7 +8,7 @@ import PopupModal from "./PopupModal";
 
 export default class GamePage extends React.Component {
     render() {
-        const { gameOver, modalContent, color, log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos } = this.props;
+        const { gameOver, modalContent, modalSize, color, log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos } = this.props;
         return (
             <Grid
                 textAlign='center'
@@ -31,7 +31,8 @@ export default class GamePage extends React.Component {
                     </Grid.Column>
                     <Grid.Column width={4}>
                         <Log logItems={log} />
-                        <PopupModal gameOver={gameOver} modalContent={modalContent} />
+                        <GiveUpButton/>
+                        <PopupModal gameOver={gameOver} modalContent={modalContent} modalSize={modalSize}/>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

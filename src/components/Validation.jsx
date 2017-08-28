@@ -7,6 +7,7 @@ let observer = null;
 let log = [];
 let modalContent = null;
 let gameOver = false;
+let modalSize = null;
 
 let selectedPos = [0, 0];
 let isKing = false;
@@ -64,7 +65,7 @@ function emitSwitchTurn() {
 }
 
 function emitChange() {
-    observer(gameOver, modalContent, color, log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos);
+    observer(gameOver, modalContent, modalSize, color, log, playerTurn, selectedPos, player1PiecesPos, player2PiecesPos, isPlayer1, player1KingPos, player2KingPos);
 }
 
 export function observe(o) {
@@ -446,6 +447,7 @@ function capturePiece() {
                 log.push(" > Try harder next time Player 2");
 
                 modalContent = "Player 1 WON! Try harder next time Player 2 :(";
+                modalSize = "tiny";
 
                 gameOver = true;
             }
@@ -463,6 +465,7 @@ function capturePiece() {
                 log.push(" > Try harder next time Player 1");
 
                 modalContent = "Player 2 WON! Try harder next time Player 1 :(";
+                modalSize = "tiny";
 
                 gameOver = true;
             }
@@ -484,4 +487,12 @@ function compareArrays(a1, a2) {
     return (a1.length == a2.length) && a1.every(function (element, index) {
         return element === a2[index];
     });
+}
+
+export function giveup() {
+    gameOver = true;
+    modalContent = "You gave up :(";
+    modalSize = "mini";
+
+    emitChange();
 }
