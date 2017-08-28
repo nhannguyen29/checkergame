@@ -12,7 +12,7 @@ export default class Log extends React.Component {
                     </Card.Header>
                 </Card.Content>
                 <Card.Content className="logList" style={{ overflowY: 'auto' }}>
-                    <List divided relaxed items={logItems}></List>
+                    <List items={logItems.map((item, i) => ({ content: item, key: i }))} />
                 </Card.Content>
             </Card>
         );

@@ -106,6 +106,8 @@ export function canMovePiece(posX, posY) {
     }
 
     if (isJumpSquareEmpty(posX, posY, dx, dy)) { // if the square can be legally jumped to for capturing
+        console.log("CAN MOVE PIECE: ", posX, posY, dx, dy);
+        console.log("[]: ", jumpPos, capturedPiece, "FLAGS: ", continueCapture, captureCount, captureFlag);
         return true;
     }
     else if (isSquareEmpty(posX, posY) && !continueCapture) { // square does not have a piece, move normally
@@ -328,9 +330,12 @@ export function assignMovedPos(posX, posY) {
             selectedPos = [posX, posY];
 
             if (!isKing) {
+                console.log("ASSIGN POS: ", posX, posY);
+                console.log("[]: ", jumpPos, capturedPiece, "FLAGS: ", continueCapture, captureCount, captureFlag);
+
                 if (isPlayer1) {
-                    if ((isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
-                            || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
+                    if ((isJumpSquareEmpty(selectedPos[0] + 2, selectedPos[1] - 2, 2, -2)
+                            || isJumpSquareEmpty(selectedPos[0] - 2, selectedPos[1] - 2, -2, -2))
                         && captureCount > 0) { // enable double, triple, quad jumps
                         continueCapture = true;
                     }
@@ -342,8 +347,8 @@ export function assignMovedPos(posX, posY) {
                     }
                 }
                 else {
-                    if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
-                            || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2))
+                    if ((isJumpSquareEmpty(selectedPos[0] + 2, selectedPos[1] + 2, 2, 2)
+                            || isJumpSquareEmpty(selectedPos[0] - 2, selectedPos[1] + 2, -2, 2))
                         && captureCount > 0) { // enable double, triple, quad jumps
                         continueCapture = true;
                     }
@@ -356,10 +361,10 @@ export function assignMovedPos(posX, posY) {
                 }
             }
             else if (isKing && isPlayer1) {
-                if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
-                        || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2)
-                        || isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
-                        || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
+                if ((isJumpSquareEmpty(selectedPos[0] + 2, selectedPos[1] + 2, 2, 2)
+                        || isJumpSquareEmpty(selectedPos[0] - 2, selectedPos[1] + 2, -2, 2)
+                        || isJumpSquareEmpty(selectedPos[0] + 2, selectedPos[1] - 2, 2, -2)
+                        || isJumpSquareEmpty(selectedPos[0] - 2, selectedPos[1] - 2, -2, -2))
                     && captureCount > 0) { // enable double, triple, quad jumps
                     continueCapture = true;
                 }
@@ -371,10 +376,10 @@ export function assignMovedPos(posX, posY) {
                 }
             }
             else if (isKing && !isPlayer1) {
-                if ((isJumpSquareEmpty(posX + 2, posY + 2, 2, 2)
-                        || isJumpSquareEmpty(posX - 2, posY + 2, -2, 2)
-                        || isJumpSquareEmpty(posX + 2, posY - 2, 2, -2)
-                        || isJumpSquareEmpty(posX - 2, posY - 2, -2, -2))
+                if ((isJumpSquareEmpty(selectedPos[0] + 2, selectedPos[1] + 2, 2, 2)
+                        || isJumpSquareEmpty(selectedPos[0] - 2, selectedPos[1] + 2, -2, 2)
+                        || isJumpSquareEmpty(selectedPos[0] + 2, selectedPos[1] - 2, 2, -2)
+                        || isJumpSquareEmpty(selectedPos[0] - 2, selectedPos[1] - 2, -2, -2))
                     && captureCount > 0) { // enable double, triple, quad jumps
                     continueCapture = true;
                 }
@@ -491,7 +496,7 @@ function compareArrays(a1, a2) {
 
 export function giveup() {
     gameOver = true;
-    modalContent = "You gave up :(";
+    modalContent = "You rage quit :(";
     modalSize = "mini";
 
     emitChange();

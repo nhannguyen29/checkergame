@@ -9,6 +9,6 @@ export default class GiveUpButton extends React.Component {
     }
 
     render() {
-        return <Button onClick={this.handleClick.bind(this)} className='startBtn' style={{ backgroundColor: '#009688', color: '#FAFAFA' }} size='large'>I Give Up!</Button>
+        return <Button onClick={this.handleClick.bind(this)} className='startBtn' style={{ backgroundColor: '#009688', color: '#FAFAFA' }} size='large'>RAGE QUIT!</Button>
     }
 };
