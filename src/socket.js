@@ -51,8 +51,8 @@ var userNames = (function() {
 
 let client1 = undefined;
 let client2 = undefined;
-let username1 = "";
-let username2 = "";
+let username1 = "Player1";
+let username2 = "Player2";
 
 export function setUsername(username) {
     if (username1 == "") {
