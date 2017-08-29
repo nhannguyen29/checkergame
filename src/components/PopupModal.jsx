@@ -20,7 +20,7 @@ export default class PopupModal extends Component {
                     <h3>{this.props.modalContent}</h3>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button style={{backgroundColor: '#009688', color: '#FAFAFA'}} onClick={this.backToLobby.bind(this)} inverted>
+                    <Button color="teal" onClick={this.backToLobby.bind(this)} inverted>
                         Back to lobby
                     </Button>
                 </Modal.Actions>

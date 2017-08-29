@@ -74091,7 +74091,7 @@ var PopupModal = function (_Component) {
                     null,
                     _react2.default.createElement(
                         _semanticUiReact.Button,
-                        { style: { backgroundColor: '#009688', color: '#FAFAFA' }, onClick: this.backToLobby.bind(this), inverted: true },
+                        { color: 'teal', onClick: this.backToLobby.bind(this), inverted: true },
                         'Back to lobby'
                     )
                 )
